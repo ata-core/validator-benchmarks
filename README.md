@@ -12,8 +12,8 @@ repository, and a scene where ata is behind is in the table like the others.
 
 | body | what it is | zod, valibot, typebox versions |
 |---|---|---|
-| user | 4 fields, a sign-up form (`bodies/user.schema.json`) | written by hand in `bodies/index.mjs` |
-| order | customer, items with a sku pattern, address, uuid/email/date-time formats (`bodies/order.schemas.mjs`) | `bodies/order.*.mjs` |
+| user | 4 fields, a sign-up form (`bodies/user.schema.json`) | written by hand in `bodies/index.mjs`; typia in `typia/src` |
+| order | customer, items with a sku pattern, address, uuid/email/date-time formats (`bodies/order.schemas.mjs`) | `bodies/order.*.mjs`; typia in `typia/src` |
 | config | 25 sections, 30 KB of schema, 10 KB of document, shared definitions, `additionalProperties: false` | not written; JSON Schema libraries only |
 
 Documents are generated deterministically or come from a committed corpus, so
@@ -34,8 +34,18 @@ every machine sees the same ones: 900 valid and 900 invalid users and orders,
 ata-validator (runtime, the compiled module of `ata compile`, the `/lite` entry
 without the code generator, and `richErrors: false` in the errors scene), ajv
 with ajv-formats, @exodus/schemasafe, @cfworker/json-schema, typebox
-(TypeCompiler and Value.Check), zod, valibot. Formats are asserted everywhere;
-typebox takes ajv-formats' checkers through its FormatRegistry.
+(TypeCompiler and Value.Check), typia, zod, valibot. Formats are asserted
+everywhere; typebox takes ajv-formats' checkers through its FormatRegistry.
+
+typia validates TypeScript types, compiled at build time: `typia/src/validators.ts`
+holds the user and order bodies as tagged types, and `npm run typia` (ttsc, the
+TypeScript-Go plugin host typia 15 requires) turns them into plain functions in
+`typia/dist`. The user body closes its object, so it uses `createEquals` and
+`createValidateEquals`; the order body does not, so `createIs` and
+`createValidate`. As of typia 15.1.0 the generated code constructs a `pattern`'s
+RegExp on every call and counts string lengths in code points by iterating the
+string; on the order body those two are about half of its time. That is the
+published output and is measured as it comes.
 
 ## Method
 
@@ -51,6 +61,7 @@ in one loop, the order they were warmed in showed in the numbers.
 
 ```sh
 npm ci
+npm run typia                                  # build typia's validators
 node run.mjs                                   # results/<date>-<host>.json
 node report.mjs results/<date>-<host>.json     # RESULTS.md
 node run.mjs --scene verdict-valid --body order

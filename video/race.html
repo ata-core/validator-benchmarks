@@ -32,7 +32,7 @@
 // frame timing. Rows are sorted by throughput; each ball bounces along its
 // lane with a period inversely proportional to its row's rate, so the fastest
 // row completes the most crossings in the clip.
-const palette = { ata: '#6b5bd6', 'ata (compiled)': '#8b7cf0', 'ata-validator/lite': '#a99cf5', 'ata richErrors:false': '#5546c4', ajv: '#c0392b', typebox: '#2a7de1', 'typebox (Value.Check)': '#2a7de1', 'typebox (TypeCompiler)': '#2a7de1', '@exodus/schemasafe': '#1a9b6c', zod: '#3e67b1', valibot: '#e3b418', '@cfworker/json-schema': '#f6821f' }
+const palette = { ata: '#6b5bd6', 'ata (compiled)': '#8b7cf0', 'ata-validator/lite': '#a99cf5', 'ata richErrors:false': '#5546c4', ajv: '#c0392b', typebox: '#2a7de1', 'typebox (Value.Check)': '#2a7de1', 'typebox (TypeCompiler)': '#2a7de1', typia: '#1d3557', '@exodus/schemasafe': '#1a9b6c', zod: '#3e67b1', valibot: '#e3b418', '@cfworker/json-schema': '#f6821f' }
 const initials = { ajv: 'A', typebox: 'T', 'typebox (Value.Check)': 'T', 'typebox (TypeCompiler)': 'T', '@exodus/schemasafe': 'S', zod: 'Z', valibot: 'V', '@cfworker/json-schema': 'C' }
 let data = null
 async function load () {
@@ -62,13 +62,13 @@ function build () {
   stage.innerHTML = `<div class="title" style="${title.length > 70 ? 'font-size:22px' : ''}">${title}</div><div class="sub">${sub}</div>` +
     data.rows.map((r, i) => {
       const color = palette[r.name] || '#777'
-      const logo = r.name.startsWith('ata') ? 'logos/ata-mark.png' : r.name === 'ajv' ? 'logos/ajv.svg' : r.name === 'zod' ? 'logos/zod.svg' : r.name === 'valibot' ? 'logos/valibot.svg' : r.name.startsWith('typebox') ? 'logos/typebox.png' : r.name === '@cfworker/json-schema' ? 'logos/cloudflareworkers.svg' : null
+      const logo = r.name.startsWith('ata') ? 'logos/ata-mark.png' : r.name === 'ajv' ? 'logos/ajv.svg' : r.name === 'zod' ? 'logos/zod.svg' : r.name === 'valibot' ? 'logos/valibot.svg' : r.name.startsWith('typebox') ? 'logos/typebox.png' : r.name === 'typia' ? 'logos/typia.png' : r.name === '@cfworker/json-schema' ? 'logos/cloudflareworkers.svg' : null
       const badge = logo ? `<img class="${/ata-mark\.png/.test(logo) ? 'ata' : /typebox/.test(logo) ? 'typebox' : ''}" src="${logo}" alt="">` : initials[r.name]
       const eq = /^(zod|valibot|typebox)/.test(r.name) ? ' equivalent' : ''
       const dead = !r.ops
       return `<div class="row" style="top:${96 + i * rowH}px;height:${rowH - 10}px">
         <div class="badge" style="background:${logo ? '#fff' : color};${dead ? 'opacity:.45' : ''}">${badge}</div>
-        <div class="card" style="${dead ? 'opacity:.55' : ''}"><div class="name">${r.name}</div><div class="rt">node · json schema${eq}</div><div class="ops" style="${dead ? 'font-size:15px;color:#f5b7b1' : ''}">${dead ? (r.note || '').split(':')[0] : Math.round(r.ops).toLocaleString('en-US') + ' /s'}</div></div>
+        <div class="card" style="${dead ? 'opacity:.55' : ''}"><div class="name">${r.name}</div><div class="rt">node · ${r.name === 'typia' ? 'typescript type' : 'json schema' + eq}</div><div class="ops" style="${dead ? 'font-size:15px;color:#f5b7b1' : ''}">${dead ? (r.note || '').split(':')[0] : Math.round(r.ops).toLocaleString('en-US') + ' /s'}</div></div>
         <div class="lane"><div class="ball" id="ball${i}" style="background:${dead ? '#9a9a9a' : color};${dead ? 'opacity:.35' : ''}"></div></div>
       </div>`
     }).join('') +

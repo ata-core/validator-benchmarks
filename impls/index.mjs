@@ -16,6 +16,7 @@ export const libs = {
   ajv: { blocked: false, kind: 'json-schema' },
   '@exodus/schemasafe': { blocked: false, kind: 'json-schema' },
   '@cfworker/json-schema': { blocked: true, kind: 'json-schema' },
+  typia: { blocked: true, kind: 'equivalent', bodies: ['user', 'order'] },
   typebox: { blocked: false, kind: 'equivalent' },
   'typebox (Value.Check)': { blocked: true, kind: 'equivalent' },
   zod: { blocked: true, kind: 'equivalent' },
@@ -27,7 +28,7 @@ export function versions () {
   const fs = require('node:fs')
   const v = (p) => JSON.parse(fs.readFileSync(new URL(`../node_modules/${p}/package.json`, import.meta.url), 'utf8')).version
   const out = {}
-  for (const p of ['ata-validator', 'ajv', 'ajv-formats', '@exodus/schemasafe', '@cfworker/json-schema', '@sinclair/typebox', 'zod', 'valibot']) out[p] = v(p)
+  for (const p of ['ata-validator', 'ajv', 'ajv-formats', '@exodus/schemasafe', '@cfworker/json-schema', '@sinclair/typebox', 'typia', 'zod', 'valibot']) out[p] = v(p)
   return out
 }
 
@@ -48,6 +49,7 @@ export async function make (lib, body, scene) {
   const meta = libs[lib]
   if (meta.scenes && !meta.scenes.includes(scene)) return null
   if (meta.kind === 'equivalent' && !body.zod) return null
+  if (meta.bodies && !meta.bodies.includes(body.name)) return null
   const schema = body.schema
   if (lib === 'ata' || lib === 'ata richErrors:false') {
     const { Validator } = require('ata-validator')
@@ -82,6 +84,14 @@ export async function make (lib, body, scene) {
     const { Validator } = require('@cfworker/json-schema')
     const v = new Validator(schema, '2020-12', false)
     return verdictOrErrors(scene, (d) => v.validate(d))
+  }
+  if (lib === 'typia') {
+    // Compiled at build time from TypeScript types by `npx ttsc -p typia`
+    // (typia/src/validators.ts); the runtime holds plain functions.
+    const t = await import('../typia/dist/validators.js')
+    const is = body.name === 'user' ? t.isUser : t.isOrder
+    const validate = body.name === 'user' ? t.validateUser : t.validateOrder
+    return scene === 'verdict' ? (d) => is(d) : (d) => { const r = validate(d); return r.success ? 0 : count(r.errors) }
   }
   if (lib === 'typebox') {
     // ESM, as bodies/index.mjs imports typebox: a CommonJS copy has its own
