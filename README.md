@@ -1,88 +1,84 @@
-# ata race
+# validator-benchmarks
 
-Validations per second of one realistic API body across JSON Schema validators and
-their TypeScript-first equivalents, rendered as a bouncing-ball list.
+JSON Schema validators and their TypeScript-first equivalents on realistic API
+bodies: documents a second, per scene, one library per process. Numbers in
+[RESULTS.md](RESULTS.md); the raw samples, versions and machine in `results/`.
 
-The body is an order: customer (id, email, name, phone), 1 to 50 items with a sku
-pattern, quantity, price and a currency enum, a shipping address, a uuid, an email and
-a date-time. 900 valid orders from a generated corpus, parsed once; every library sees
-the same objects.
+Maintained by the ata-validator project, so read it as such. Every library is
+run from its published package at a pinned version, every schema is in the
+repository, and a scene where ata is behind is in the table like the others.
 
-## The video
+## Bodies
 
-![Valid order bodies per second](media/race-valid.gif)
-
-Full quality: [media/race-valid-hq.mp4](media/race-valid-hq.mp4) (1920x1600, 60 fps).
-The same with code generation refused, the rule Cloudflare Workers enforce:
-[media/race-blocked-valid-hq.mp4](media/race-blocked-valid-hq.mp4), preview below.
-Also in `media/`: the invalid-body runs and an ata against @cfworker/json-schema cut.
-
-![With new Function refused](media/race-blocked-valid.gif)
-
-## Results, 2026-10-10
-
-Node 25.2.1, Apple M4 Pro, ata-validator 1.48.0 plus the master commits up to cb8d563
-(the defaults, enum and regex changes of the coming release). One library per process,
-three passes in rotation, median of 27 runs. The number is how many orders a second
-the library answers for.
-
-| validator | valid orders /s | invalid orders /s |
+| body | what it is | zod, valibot, typebox versions |
 |---|---|---|
-| ata | 2,830,522 | 4,108,963 |
-| ata (compiled module) | 2,779,530 | 4,019,464 |
-| typebox (TypeCompiler) | 1,646,417 | 4,000,148 |
-| ajv | 1,257,342 | 3,221,452 |
-| @exodus/schemasafe | 850,357 | 1,762,517 |
-| valibot | 488,557 | 435,384 |
-| zod | 437,670 | 338,052 |
-| @cfworker/json-schema | 54,621 | 55,392 |
+| user | 4 fields, a sign-up form (`bodies/user.schema.json`) | written by hand in `bodies/index.mjs` |
+| order | customer, items with a sku pattern, address, uuid/email/date-time formats (`bodies/order.schemas.mjs`) | `bodies/order.*.mjs` |
+| config | 25 sections, 30 KB of schema, 10 KB of document, shared definitions, `additionalProperties: false` | not written; JSON Schema libraries only |
 
-With code generation from strings refused, the rule Cloudflare Workers enforce
-(`node --disallow-code-generation-from-strings`):
+Documents are generated deterministically or come from a committed corpus, so
+every machine sees the same ones: 900 valid and 900 invalid users and orders,
+120 of each config.
 
-| validator | valid orders /s |
+## Scenes
+
+| scene | what is timed |
 |---|---|
-| ata (compiled module) | 2,960,384 |
-| ata | 615,500 |
-| ata-validator/lite | 613,439 |
-| valibot | 497,811 |
-| typebox (Value.Check) | 291,558 |
-| zod | 236,268 |
-| @cfworker/json-schema | 55,501 |
-| ajv, @exodus/schemasafe, typebox (TypeCompiler) | throw EvalError |
+| verdict-valid | does the document pass; the boolean API where the library has one, `safeParse().success` otherwise |
+| verdict-invalid | the same on documents that fail in one place |
+| errors-invalid | every error of an invalid document produced and iterated, all errors on everywhere |
+| blocked-verdict-valid | verdict-valid under `node --disallow-code-generation-from-strings`, the rule Cloudflare Workers and strict-CSP pages enforce; a library that compiles with `new Function` throws `EvalError` and is listed as such |
 
-Raw samples are in `results-*.json`.
+## Libraries
 
-## What is compared
+ata-validator (runtime, the compiled module of `ata compile`, the `/lite` entry
+without the code generator, and `richErrors: false` in the errors scene), ajv
+with ajv-formats, @exodus/schemasafe, @cfworker/json-schema, typebox
+(TypeCompiler and Value.Check), zod, valibot. Formats are asserted everywhere;
+typebox takes ajv-formats' checkers through its FormatRegistry.
 
-The verdict: does the body pass. Boolean APIs where the library has one (ata
-`isValid` and `validate().valid`, typebox `Check`, schemasafe without errors),
-`safeParse().success` for zod and valibot, ajv's compiled function (it stops at the
-first error), `validate().valid` for cfworker. Formats are on everywhere: ajv through
-ajv-formats, typebox through the same checkers registered in its FormatRegistry.
+## Method
 
-Where ata is not ahead: with every error read on an invalid body, ajv is faster,
-about 1.2x in lean mode and more with rich errors, because each ata error carries the
-received value, a detail line and a suggestion. That scene is not in these numbers.
-
-The zod, valibot and typebox schemas are hand-written equivalents of the JSON Schema
-(`schemas.mjs`, `vb.mjs`, `tb.mjs`). If one of them is not what you would write, open
-an issue with the version you would.
+`run.mjs` spawns one Node process per scene, body and library. The child
+builds its adapter, checks that it answers every document the way the scene
+expects (a mismatch is reported next to the number), warms up for 400 ms, then
+takes 9 samples of about 20,000 documents each. The parent rotates through the
+libraries three times, so 27 samples per cell, and keeps the median. Libraries
+never share a heap or JIT feedback; in an earlier version that ran all of them
+in one loop, the order they were warmed in showed in the numbers.
 
 ## Run it
 
 ```sh
-npm install
-node bench.mjs valid
-node bench.mjs invalid
-node --disallow-code-generation-from-strings bench-blocked.mjs valid
+npm ci
+node run.mjs                                   # results/<date>-<host>.json
+node report.mjs results/<date>-<host>.json     # RESULTS.md
+node run.mjs --scene verdict-valid --body order
 ```
 
-`bench.mjs` compiles the ata module it measures and writes `results-<mode>.json`.
+A GitHub Actions workflow runs the same on demand and monthly and attaches the
+results; a runner's numbers are noisier than a desktop's and are not the ones
+in RESULTS.md.
 
-## Render the video
+## The video
 
-`node render.cjs results-valid.json race-valid.mp4` steps the page's `render(t)` at
-60 fps for 10 seconds under Playwright and encodes with ffmpeg-static. `NAMES=a,b`
-keeps only those rows. Logos are the projects' own, from their repositories and
-sites; the Cloudflare Workers mark is from simple-icons.
+`node video/render.cjs results/<file>.json verdict-valid order out.mp4` renders
+a scene and body as a bouncing-ball list (each ball crosses its lane at a rate
+proportional to the row's throughput), 1920x1600, 60 fps, 10 s, through
+Playwright and ffmpeg-static. `NAMES=a,b` keeps only those rows.
+
+![order, valid, the verdict](media/race-order-verdict-valid.gif)
+
+![order, valid, the verdict, with new Function refused](media/race-order-blocked-verdict-valid.gif)
+
+Full quality in `media/`: the two above, the order body with every error read (where ata's
+default errors are behind ajv on the small body), and the config body. Logos are the projects' own, from their repositories
+and sites; the Cloudflare Workers mark is from simple-icons.
+
+## Adding a library or a body
+
+An adapter is one `if` block in `impls/index.mjs` with a `verdict` and an
+`errors` form and a `blocked` flag. A body is a JSON Schema, a documents
+generator or corpus, and optionally the zod, valibot and typebox versions, in
+`bodies/`. If a schema here is not what you would write, open an issue with the
+version you would.

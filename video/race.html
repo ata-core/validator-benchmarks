@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Validations per second</title>
+<title>Documents a second</title>
 <style>
   :root { --bg: #ececec; --card: #3a3a3a; --text: #f4f4f4; --dim: #c9c9c9; --frame: #2b2b2b; }
   html, body { margin: 0; background: var(--bg); font-family: "SF Mono", Menlo, Consolas, monospace; }
@@ -32,13 +32,17 @@
 // frame timing. Rows are sorted by throughput; each ball bounces along its
 // lane with a period inversely proportional to its row's rate, so the fastest
 // row completes the most crossings in the clip.
-const palette = { ata: '#6b5bd6', 'ata (compiled)': '#8b7cf0', 'ata-validator/lite': '#a99cf5', ajv: '#c0392b', typebox: '#2a7de1', 'typebox (Value.Check)': '#2a7de1', 'typebox (TypeCompiler)': '#2a7de1', '@exodus/schemasafe': '#1a9b6c', zod: '#3e67b1', valibot: '#e3b418', '@cfworker/json-schema': '#f6821f' }
+const palette = { ata: '#6b5bd6', 'ata (compiled)': '#8b7cf0', 'ata-validator/lite': '#a99cf5', 'ata richErrors:false': '#5546c4', ajv: '#c0392b', typebox: '#2a7de1', 'typebox (Value.Check)': '#2a7de1', 'typebox (TypeCompiler)': '#2a7de1', '@exodus/schemasafe': '#1a9b6c', zod: '#3e67b1', valibot: '#e3b418', '@cfworker/json-schema': '#f6821f' }
 const initials = { ajv: 'A', typebox: 'T', 'typebox (Value.Check)': 'T', 'typebox (TypeCompiler)': 'T', '@exodus/schemasafe': 'S', zod: 'Z', valibot: 'V', '@cfworker/json-schema': 'C' }
 let data = null
 async function load () {
   const q = new URLSearchParams(location.search)
-  data = await (await fetch(q.get('results') || 'results-valid.json')).json()
-  // ?names=a,b,c keeps only those rows, for a head-to-head cut.
+  // ?results=../results/<file>.json&scene=verdict-valid&body=order, the
+  // runner's format; ?names=a,b,c keeps only those rows for a head-to-head cut.
+  const all = await (await fetch(q.get('results') || '../results/latest.json')).json()
+  const sceneName = q.get('scene') || 'verdict-valid', bodyName = q.get('body') || 'order'
+  const sc = all.scenes[sceneName], bd = sc.bodies[bodyName]
+  data = { rows: bd.rows.slice(), scene: sceneName, body: bodyName, about: bd.about, docs: bd.docs, sceneAbout: sc.about, date: all.date, cpu: all.cpu, node: all.node, ata: all.versions['ata-validator'], file: q.get('results') }
   if (q.get('names')) { const keep = q.get('names').split(','); data.rows = data.rows.filter((r) => keep.includes(r.name)) }
   data.rows.sort((a, b) => b.ops - a.ops)
   build()
@@ -47,13 +51,15 @@ async function load () {
 function build () {
   const stage = document.getElementById('stage')
   const top = data.rows[0].ops
-  const blocked = data.scene === 'blocked'
-  const title = blocked ? 'With new Function refused, as Cloudflare Workers run: validating one API body (an order), ' + data.mode + ', per second' : 'Validating one API body (an order), ' + data.mode + ', per second'
-  const sub = blocked ? 'node --disallow-code-generation-from-strings, same 900 orders for every library, median of 27 runs in separate processes, Apple M4 Pro' : 'node, same 900 orders for every library, median of 27 runs in separate processes, Apple M4 Pro'
+  const blocked = data.scene.startsWith('blocked')
+  const what = { 'verdict-valid': 'valid, the verdict', 'verdict-invalid': 'invalid, the verdict', 'errors-invalid': 'invalid, every error read', 'blocked-verdict-valid': 'valid, the verdict, with new Function refused as Cloudflare Workers run' }[data.scene] || data.scene
+  const title = `${data.body} body · ${what} · documents a second`
+  const subAbout = `${data.body}: ${data.about}. `
+  const sub = subAbout + `${blocked ? 'node --disallow-code-generation-from-strings' : 'node ' + data.node}, the same ${data.docs} documents for every library, one library per process, median of 27 · ${data.cpu}`
   const rowH = data.rows.length > 8 ? 84 : 96
   // The stage shrinks to its rows for a short list; the renderer reads it.
   stage.style.height = Math.max(400, 96 + data.rows.length * rowH + 76) + 'px'
-  stage.innerHTML = `<div class="title" style="${blocked ? 'font-size:22px' : ''}">${title}</div><div class="sub">${sub}</div>` +
+  stage.innerHTML = `<div class="title" style="${title.length > 70 ? 'font-size:22px' : ''}">${title}</div><div class="sub">${sub}</div>` +
     data.rows.map((r, i) => {
       const color = palette[r.name] || '#777'
       const logo = r.name.startsWith('ata') ? 'logos/ata-mark.png' : r.name === 'ajv' ? 'logos/ajv.svg' : r.name === 'zod' ? 'logos/zod.svg' : r.name === 'valibot' ? 'logos/valibot.svg' : r.name.startsWith('typebox') ? 'logos/typebox.png' : r.name === '@cfworker/json-schema' ? 'logos/cloudflareworkers.svg' : null
@@ -66,7 +72,7 @@ function build () {
         <div class="lane"><div class="ball" id="ball${i}" style="background:${dead ? '#9a9a9a' : color};${dead ? 'opacity:.35' : ''}"></div></div>
       </div>`
     }).join('') +
-    `<div class="foot">ata-validator ${data.ata || ''} · ${new URLSearchParams(location.search).get('results') || 'results-valid.json'} · ${data.date}</div>`
+    `<div class="foot">ata-validator ${data.ata || ''} · ${(data.file || '').replace(/^\.\.\//, '')} · ${data.date} · github.com/ata-core/validator-benchmarks</div>`
 }
 function render (t) {
   const top = data.rows[0].ops

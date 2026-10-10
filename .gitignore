@@ -1,5 +1,5 @@
 node_modules
 frames
+video/frames
 preview*.png
-order.compiled.mjs
 /*.mp4
