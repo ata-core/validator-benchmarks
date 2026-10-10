@@ -9,16 +9,17 @@
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
     "ata-validator": "1.48.0",
+    "typia": "15.1.0",
     "valibot": "1.5.0",
-    "zod": "4.6.5",
-    "typia": "15.1.0"
+    "zod": "4.6.5"
   },
   "devDependencies": {
     "ffmpeg-static": "5.2.0",
     "playwright": "1.50.1",
     "ttsc": "^0.31.0",
     "typescript": "7.0.2",
-    "typia": "^15.1.0"
+    "typia": "^15.1.0",
+    "wrangler": "4.149.0"
   },
   "scripts": {
     "bench": "npm run typia && node run.mjs",

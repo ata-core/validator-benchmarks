@@ -92,6 +92,30 @@ A GitHub Actions workflow runs the same on demand and monthly and attaches the
 results; a runner's numbers are noisier than a desktop's and are not the ones
 in RESULTS.md.
 
+## MCP tool output on workerd
+
+`workerd/` validates an MCP tool's structured output (N search results, each
+with an id, title, uri, score, snippet, tags and a date-time) the way the MCP
+client does on every `tools/call`, inside a Worker on `workerd` through
+`wrangler dev`. cfworker is constructed as the MCP SDK constructs it
+(`shortcircuit` on); ata is `ata-validator/lite`, the engine that runs where
+`new Function` is refused. The clock is frozen inside a Worker request, so each
+request validates 20 times and is timed from outside; the cost per validation
+is the difference from a request that validates nothing, divided by 20.
+
+2026-10-10, wrangler 4.149.0, Apple M4 Pro, median of 31 requests, two runs:
+
+| tool output | cfworker | ata |
+|---|---:|---:|
+| 100 results, 34 KB | 0.20 ms | under 0.03 ms |
+| 500 results, 169 KB | 1.11 ms | 0.11 to 0.13 ms |
+| 1000 results, 338 KB | 2.21 ms | 0.23 ms |
+
+Cloudflare's servers are not an M4, so on the edge both columns are larger;
+the ratio is what carries over. The workerd version matters: with wrangler
+4.69 the cfworker column was about 70% higher. `node workerd/measure.mjs`
+reruns it.
+
 ## The video
 
 `node video/render.cjs results/<file>.json verdict-valid order out.mp4` renders

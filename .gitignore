@@ -4,3 +4,4 @@ video/frames
 preview*.png
 /*.mp4
 typia/dist
+.wrangler
