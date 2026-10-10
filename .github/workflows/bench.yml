@@ -20,10 +20,11 @@ jobs:
       - run: npm ci
       - run: npm run typia
       - run: node run.mjs
-      - run: node report.mjs results/*.json && cat RESULTS.md
+      # The runner's own file, not the committed ones.
+      - run: node report.mjs "$(ls -t results/*.json | head -1)" RESULTS-runner.md && cat RESULTS-runner.md
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: results
           path: |
             results/*.json
-            RESULTS.md
+            RESULTS-runner.md

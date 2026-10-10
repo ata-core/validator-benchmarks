@@ -1,6 +1,6 @@
 // results/<file>.json to RESULTS.md: one table per scene, bodies as columns,
 // documents a second, and the ratio to ata's runtime row.
-//   node report.mjs results/2026-10-10-host.json
+//   node report.mjs results/2026-10-10-host.json [RESULTS.md]
 import { readFileSync, writeFileSync } from 'node:fs'
 const file = process.argv[2]
 const r = JSON.parse(readFileSync(file, 'utf8'))
@@ -48,5 +48,6 @@ for (const [sceneName, sc] of Object.entries(r.scenes)) {
   }
   lines.push('')
 }
-writeFileSync('RESULTS.md', lines.join('\n'))
-console.log('wrote RESULTS.md')
+const outFile = process.argv[3] || 'RESULTS.md'
+writeFileSync(outFile, lines.join('\n'))
+console.log('wrote', outFile)
