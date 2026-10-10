@@ -1,0 +1,53 @@
+{
+ "mode": "valid",
+ "scene": "blocked",
+ "node": "v25.2.1",
+ "ata": "1.48.0 (master)",
+ "date": "2026-10-10",
+ "docs": 900,
+ "rows": [
+  {
+   "name": "ata (compiled)",
+   "ops": 2960384.1394459344
+  },
+  {
+   "name": "ata",
+   "ops": 615500.3504932552
+  },
+  {
+   "name": "ata-validator/lite",
+   "ops": 613439.4356357192
+  },
+  {
+   "name": "valibot",
+   "ops": 497811.1382531879
+  },
+  {
+   "name": "typebox (Value.Check)",
+   "ops": 291558.1759796557
+  },
+  {
+   "name": "zod",
+   "ops": 236267.6267462934
+  },
+  {
+   "name": "@cfworker/json-schema",
+   "ops": 55500.86835733617
+  },
+  {
+   "name": "ajv",
+   "ops": 0,
+   "note": "EvalError: Code generation from strings disallowed for this context"
+  },
+  {
+   "name": "@exodus/schemasafe",
+   "ops": 0,
+   "note": "EvalError: Code generation from strings disallowed for this context"
+  },
+  {
+   "name": "typebox (TypeCompiler)",
+   "ops": 0,
+   "note": "EvalError: Code generation from strings disallowed for this context"
+  }
+ ]
+}

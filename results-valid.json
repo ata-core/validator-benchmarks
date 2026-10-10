@@ -1,0 +1,41 @@
+{
+ "mode": "valid",
+ "node": "v25.2.1",
+ "ata": "1.48.0 (master)",
+ "date": "2026-10-10",
+ "docs": 900,
+ "rows": [
+  {
+   "name": "ata",
+   "ops": 2830522.4672720837
+  },
+  {
+   "name": "ata (compiled)",
+   "ops": 2779529.5677090315
+  },
+  {
+   "name": "typebox",
+   "ops": 1646416.807061811
+  },
+  {
+   "name": "ajv",
+   "ops": 1257341.7406653028
+  },
+  {
+   "name": "@exodus/schemasafe",
+   "ops": 850356.88769946
+  },
+  {
+   "name": "valibot",
+   "ops": 488557.3623070287
+  },
+  {
+   "name": "zod",
+   "ops": 437670.01504490676
+  },
+  {
+   "name": "@cfworker/json-schema",
+   "ops": 54621.193119427786
+  }
+ ]
+}

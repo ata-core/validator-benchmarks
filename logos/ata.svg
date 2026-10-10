@@ -1,0 +1,34 @@
+<svg width="100%" viewBox="0 0 1510 510" xmlns="http://www.w3.org/2000/svg" role="img" style="font-family: &quot;IBM Plex Mono&quot;, Inter, -apple-system, monospace;">
+<title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;IBM Plex Mono&quot;, Inter, -apple-system, monospace;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">ata logo — ocean</title>
+<desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;IBM Plex Mono&quot;, Inter, -apple-system, monospace;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">ata wordmark in teal-cyan-blue ocean gradient with double outline</desc>
+
+<defs>
+  <linearGradient id="oceanGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+    <stop offset="0%" stop-color="#00C9A7"/>
+    <stop offset="50%" stop-color="#00B7D6"/>
+    <stop offset="100%" stop-color="#3D5AFE"/>
+  </linearGradient>
+  
+  <linearGradient id="oceanGradInner" x1="0%" y1="50%" x2="100%" y2="50%">
+    <stop offset="0%" stop-color="#5DDAC2"/>
+    <stop offset="50%" stop-color="#5DCBE0"/>
+    <stop offset="100%" stop-color="#7088FF"/>
+  </linearGradient>
+</defs>
+
+<rect x="0" y="0" width="1500" height="500" fill="#FFFFFF" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;IBM Plex Mono&quot;, Inter, -apple-system, monospace;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<g transform="translate(750, 290)" font-family="'IBM Plex Mono', 'Inter', -apple-system, monospace" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;IBM Plex Mono&quot;, Inter, -apple-system, monospace;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+  
+  <!-- KATMAN 1: Dış kalın gradient -->
+  <text x="0" y="0" text-anchor="middle" font-size="380" font-weight="700" letter-spacing="-30" fill="url(#oceanGrad)" stroke="url(#oceanGrad)" stroke-width="40" stroke-linejoin="round" dominant-baseline="middle" style="color:rgb(255, 255, 255);stroke-width:40px;stroke-linecap:butt;stroke-linejoin:round;opacity:1;font-family:&quot;IBM Plex Mono&quot;, Inter, -apple-system, monospace;font-size:380px;font-weight:700;text-anchor:middle;dominant-baseline:middle">ata</text>
+  
+  <!-- KATMAN 2: Beyaz iç boşluk -->
+  <text x="0" y="0" text-anchor="middle" font-size="380" font-weight="700" letter-spacing="-30" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="14" stroke-linejoin="round" dominant-baseline="middle" style="fill:rgb(255, 255, 255);stroke:rgb(255, 255, 255);color:rgb(255, 255, 255);stroke-width:14px;stroke-linecap:butt;stroke-linejoin:round;opacity:1;font-family:&quot;IBM Plex Mono&quot;, Inter, -apple-system, monospace;font-size:380px;font-weight:700;text-anchor:middle;dominant-baseline:middle">ata</text>
+  
+  <!-- KATMAN 3: İç ince gradient -->
+  <text x="0" y="0" text-anchor="middle" font-size="380" font-weight="700" letter-spacing="-30" fill="url(#oceanGradInner)" dominant-baseline="middle" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;IBM Plex Mono&quot;, Inter, -apple-system, monospace;font-size:380px;font-weight:700;text-anchor:middle;dominant-baseline:middle">ata</text>
+        
+</g>
+
+</svg>

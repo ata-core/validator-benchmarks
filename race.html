@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Validations per second</title>
+<style>
+  :root { --bg: #ececec; --card: #3a3a3a; --text: #f4f4f4; --dim: #c9c9c9; --frame: #2b2b2b; }
+  html, body { margin: 0; background: var(--bg); font-family: "SF Mono", Menlo, Consolas, monospace; }
+  .stage { width: 1200px; height: 1000px; position: relative; background: var(--bg); border: 10px solid var(--frame); box-sizing: border-box; overflow: hidden; }
+  .title { position: absolute; left: 36px; top: 24px; font: 600 26px/1.2 Inter, -apple-system, system-ui, sans-serif; color: #1f1f1f; }
+  .sub { position: absolute; left: 36px; top: 58px; font: 15px/1.3 Inter, -apple-system, system-ui, sans-serif; color: #555; }
+  .row { position: absolute; left: 36px; width: 1120px; height: 86px; }
+  .badge { position: absolute; left: 0; top: 10px; width: 66px; height: 66px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font: 700 26px Inter, sans-serif; color: #fff; }
+  .badge { overflow: hidden; }
+  .badge img { width: 50px; height: 50px; object-fit: contain; }
+  .badge img.ata { width: 56px; height: 56px; object-fit: contain; }
+  .badge img.typebox { width: 66px; height: 66px; object-fit: cover; transform: scale(2.9); }
+  .card { position: absolute; left: 84px; top: 6px; width: 420px; height: 74px; background: var(--card); border-radius: 6px; color: var(--text); }
+  .card .name { position: absolute; left: 16px; top: 12px; font-size: 20px; }
+  .card .rt { position: absolute; left: 16px; top: 42px; font-size: 13px; color: var(--dim); }
+  .card .ops { position: absolute; right: 16px; top: 26px; font-size: 20px; }
+  .lane { position: absolute; left: 530px; top: 0; width: 580px; height: 86px; }
+  .ball { position: absolute; top: 20px; width: 46px; height: 46px; border-radius: 50%; box-shadow: inset -6px -8px 0 rgba(0,0,0,0.18); }
+  .foot { position: absolute; left: 36px; bottom: 18px; font: 13px/1.4 Inter, -apple-system, system-ui, sans-serif; color: #555; }
+</style>
+</head>
+<body>
+<div class="stage" id="stage"></div>
+<script>
+// Deterministic: render(t) draws the frame for time t (seconds). The renderer
+// steps t and screenshots, so the video does not depend on the machine's
+// frame timing. Rows are sorted by throughput; each ball bounces along its
+// lane with a period inversely proportional to its row's rate, so the fastest
+// row completes the most crossings in the clip.
+const palette = { ata: '#6b5bd6', 'ata (compiled)': '#8b7cf0', 'ata-validator/lite': '#a99cf5', ajv: '#c0392b', typebox: '#2a7de1', 'typebox (Value.Check)': '#2a7de1', 'typebox (TypeCompiler)': '#2a7de1', '@exodus/schemasafe': '#1a9b6c', zod: '#3e67b1', valibot: '#e3b418', '@cfworker/json-schema': '#f6821f' }
+const initials = { ajv: 'A', typebox: 'T', 'typebox (Value.Check)': 'T', 'typebox (TypeCompiler)': 'T', '@exodus/schemasafe': 'S', zod: 'Z', valibot: 'V', '@cfworker/json-schema': 'C' }
+let data = null
+async function load () {
+  const q = new URLSearchParams(location.search)
+  data = await (await fetch(q.get('results') || 'results-valid.json')).json()
+  // ?names=a,b,c keeps only those rows, for a head-to-head cut.
+  if (q.get('names')) { const keep = q.get('names').split(','); data.rows = data.rows.filter((r) => keep.includes(r.name)) }
+  data.rows.sort((a, b) => b.ops - a.ops)
+  build()
+  render(0)
+}
+function build () {
+  const stage = document.getElementById('stage')
+  const top = data.rows[0].ops
+  const blocked = data.scene === 'blocked'
+  const title = blocked ? 'With new Function refused, as Cloudflare Workers run: validating one API body (an order), ' + data.mode + ', per second' : 'Validating one API body (an order), ' + data.mode + ', per second'
+  const sub = blocked ? 'node --disallow-code-generation-from-strings, same 900 orders for every library, median of 27 runs in separate processes, Apple M4 Pro' : 'node, same 900 orders for every library, median of 27 runs in separate processes, Apple M4 Pro'
+  const rowH = data.rows.length > 8 ? 84 : 96
+  // The stage shrinks to its rows for a short list; the renderer reads it.
+  stage.style.height = Math.max(400, 96 + data.rows.length * rowH + 76) + 'px'
+  stage.innerHTML = `<div class="title" style="${blocked ? 'font-size:22px' : ''}">${title}</div><div class="sub">${sub}</div>` +
+    data.rows.map((r, i) => {
+      const color = palette[r.name] || '#777'
+      const logo = r.name.startsWith('ata') ? 'logos/ata-mark.png' : r.name === 'ajv' ? 'logos/ajv.svg' : r.name === 'zod' ? 'logos/zod.svg' : r.name === 'valibot' ? 'logos/valibot.svg' : r.name.startsWith('typebox') ? 'logos/typebox.png' : r.name === '@cfworker/json-schema' ? 'logos/cloudflareworkers.svg' : null
+      const badge = logo ? `<img class="${/ata-mark\.png/.test(logo) ? 'ata' : /typebox/.test(logo) ? 'typebox' : ''}" src="${logo}" alt="">` : initials[r.name]
+      const eq = /^(zod|valibot|typebox)/.test(r.name) ? ' equivalent' : ''
+      const dead = !r.ops
+      return `<div class="row" style="top:${96 + i * rowH}px;height:${rowH - 10}px">
+        <div class="badge" style="background:${logo ? '#fff' : color};${dead ? 'opacity:.45' : ''}">${badge}</div>
+        <div class="card" style="${dead ? 'opacity:.55' : ''}"><div class="name">${r.name}</div><div class="rt">node · json schema${eq}</div><div class="ops" style="${dead ? 'font-size:15px;color:#f5b7b1' : ''}">${dead ? (r.note || '').split(':')[0] : Math.round(r.ops).toLocaleString('en-US') + ' /s'}</div></div>
+        <div class="lane"><div class="ball" id="ball${i}" style="background:${dead ? '#9a9a9a' : color};${dead ? 'opacity:.35' : ''}"></div></div>
+      </div>`
+    }).join('') +
+    `<div class="foot">ata-validator ${data.ata || ''} · ${new URLSearchParams(location.search).get('results') || 'results-valid.json'} · ${data.date}</div>`
+}
+function render (t) {
+  const top = data.rows[0].ops
+  for (let i = 0; i < data.rows.length; i++) {
+    // The fastest row crosses the lane once every 0.9 s; the others in
+    // proportion. Position is a triangle wave so the ball bounces.
+    if (!data.rows[i].ops) continue
+    const period = 0.9 * top / data.rows[i].ops
+    const phase = (t / period) % 1
+    const x = (phase < 0.5 ? phase * 2 : 2 - phase * 2) * (580 - 46)
+    document.getElementById('ball' + i).style.transform = `translateX(${x.toFixed(1)}px)`
+  }
+}
+window.__render = render
+load()
+</script>
+</body>
+</html>
