@@ -64,12 +64,13 @@ for (const sceneName of sceneNames) {
       }
       process.stderr.write(`\r${sceneName} ${bodyName} pass ${pass + 1}/3   `)
     }
-    const rows = Object.entries(acc).filter(([, a]) => !a.skipped).map(([name, a]) => ({ name, ops: a.throws ? 0 : med(a.samples), note: a.throws || (a.disagree ? `${a.disagree} documents answered differently` : undefined) })).sort((a, b) => b.ops - a.ops)
+    const q = (arr, p) => { const x = [...arr].sort((m, n) => m - n); return x[Math.floor((x.length - 1) * p)] }
+    const rows = Object.entries(acc).filter(([, a]) => !a.skipped).map(([name, a]) => ({ name, ops: a.throws ? 0 : med(a.samples), p25: a.throws ? 0 : q(a.samples, 0.25), p75: a.throws ? 0 : q(a.samples, 0.75), n: a.samples.length, note: a.throws || (a.disagree ? `${a.disagree} documents answered differently` : undefined) })).sort((a, b) => b.ops - a.ops)
     out.scenes[sceneName].bodies[bodyName] = { about: bodies[bodyName].about, docs: bodies[bodyName].docs[sc.docs].length, rows }
   }
 }
 process.stderr.write('\n')
 mkdirSync('results', { recursive: true })
-const file = `results/${out.date}-${os.hostname().split('.')[0].toLowerCase()}${want('--scene') || want('--body') ? '-partial' : ''}.json`
+const file = `results/${out.date}-${os.hostname().split('.')[0].toLowerCase()}-node${process.versions.node.split('.')[0]}${want('--scene') || want('--body') ? '-partial' : ''}.json`
 writeFileSync(file, JSON.stringify(out, null, 1))
 console.log('wrote', file)

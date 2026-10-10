@@ -58,7 +58,42 @@ function breakConfig (doc, i) {
   if (typeof val === 'number') sec[k] = 'twelve'; else if (typeof val === 'string') sec[k] = 12.5; else if (typeof val === 'boolean') sec[k] = 'yes'; else sec.unknownKey = 1
   return x
 }
-const configs = { valid: Array.from({ length: 120 }, () => structuredClone(configValid)), invalid: Array.from({ length: 120 }, (_, i) => breakConfig(configValid, i)) }
+// 120 different valid documents: each value is replaced by another the
+// schema accepts (a different port, level, name, url, number, string or
+// boolean) and optional keys are dropped at random. One document copied 120
+// times let the engines learn a single shape and a single set of values.
+const configDefs = configSchema.$defs || configSchema.definitions || {}
+function resolve (p) { if (p && p.$ref) return configDefs[p.$ref.split('/').pop()] || p; return p }
+function another (p, cur) {
+  const s = resolve(p)
+  if (s.enum) return pick(s.enum)
+  if (s.const !== undefined) return s.const
+  if (s.type === 'boolean') return rnd(2) === 1
+  if (s.type === 'integer') { const lo = s.minimum ?? 0, hi = s.maximum ?? lo + 1000; return lo + rnd(Math.max(1, Math.min(hi - lo + 1, 100000))) }
+  if (s.type === 'number') { const lo = s.minimum ?? 0; return lo + rnd(1000) / 7 }
+  if (s.type === 'string') {
+    if (s.format === 'uri' || s.format === 'url') return `https://${pick(['a', 'svc', 'api', 'edge'])}${rnd(100)}.example.com/${rnd(1000)}`
+    if (s.pattern === '^[a-z][a-z0-9-]{1,30}$') return pick(['svc', 'api', 'worker', 'queue']) + '-' + rnd(1000)
+    const max = s.maxLength ?? 24, min = s.minLength ?? 0
+    const len = Math.max(min, Math.min(max, 3 + rnd(12)))
+    return Array.from({ length: len }, () => 'abcdefghij'[rnd(10)]).join('')
+  }
+  return cur
+}
+function varyConfig (doc) {
+  const x = structuredClone(doc)
+  for (const [sk, sec] of Object.entries(x)) {
+    const secSchema = configSchema.properties[sk]
+    const required = new Set(secSchema.required || [])
+    for (const k of Object.keys(sec)) {
+      if (!required.has(k) && rnd(4) === 0) { delete sec[k]; continue }
+      sec[k] = another(secSchema.properties[k], sec[k])
+    }
+  }
+  return x
+}
+const configValidSet = Array.from({ length: 120 }, () => varyConfig(configValid))
+const configs = { valid: configValidSet, invalid: configValidSet.map((d, i) => breakConfig(d, i)) }
 
 export const bodies = {
   user: { schema: userSchema, zod: ZodUser, valibot: VbUser, typebox: TbUser, docs: users, about: '4 fields, a sign-up form' },

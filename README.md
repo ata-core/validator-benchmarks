@@ -2,11 +2,19 @@
 
 JSON Schema validators and their TypeScript-first equivalents on realistic API
 bodies: documents a second, per scene, one library per process. Numbers in
-[RESULTS.md](RESULTS.md); the raw samples, versions and machine in `results/`.
+[RESULTS.md](RESULTS.md) (Node 24 LTS), [RESULTS-node25.md](RESULTS-node25.md),
+and from a GitHub Actions Linux runner in [RESULTS-linux.md](RESULTS-linux.md);
+the raw samples, versions and machine in `results/`.
 
 Maintained by the ata-validator project, so read it as such. Every library is
 run from its published package at a pinned version, every schema is in the
 repository, and a scene where ata is behind is in the table like the others.
+
+**If you maintain one of these libraries**, please check its adapter in
+`impls/index.mjs` and its schemas in `bodies/` and `typia/src`: an option we
+should set, a faster API for the verdict, a schema written the way your users
+would not write it. An issue or a pull request is welcome, and the next run
+uses it.
 
 ## Bodies
 
@@ -18,7 +26,10 @@ repository, and a scene where ata is behind is in the table like the others.
 
 Documents are generated deterministically or come from a committed corpus, so
 every machine sees the same ones: 900 valid and 900 invalid users and orders,
-120 of each config.
+120 of each config. The config documents differ from each other in values and in
+which optional keys they carry: an earlier version repeated one document 120
+times, which let every engine learn a single shape, and ata's lead on that body
+fell from 4.6x to 1.5x when it was fixed.
 
 ## Scenes
 
@@ -42,10 +53,19 @@ holds the user and order bodies as tagged types, and `npm run typia` (ttsc, the
 TypeScript-Go plugin host typia 15 requires) turns them into plain functions in
 `typia/dist`. The user body closes its object, so it uses `createEquals` and
 `createValidateEquals`; the order body does not, so `createIs` and
-`createValidate`. As of typia 15.1.0 the generated code constructs a `pattern`'s
-RegExp on every call and counts string lengths in code points by iterating the
-string; on the order body those two are about half of its time. That is the
-published output and is measured as it comes.
+`createValidate`. typia's generated code constructs a `pattern`'s RegExp on every
+call and counts string lengths in code points by iterating the string (the same
+in 6.x, 9.x and 15.x); on the order body those two are about half of its time.
+That is the published output and is measured as it comes; the suggestion to
+change it is with typia's maintainers.
+
+## What this does not measure
+
+Parsing the JSON text, cold start, the time to compile a schema, and bundle
+size: every scene starts from parsed objects in a warm process. It also does not
+make the libraries do the same work: zod and valibot return a parsed copy of the
+data, ajv builds the first error, and formats are checked by each library's own
+rules. RESULTS.md has a table of what each one does in the verdict scenes.
 
 ## Method
 
@@ -53,7 +73,8 @@ published output and is measured as it comes.
 builds its adapter, checks that it answers every document the way the scene
 expects (a mismatch is reported next to the number), warms up for 400 ms, then
 takes 9 samples of about 20,000 documents each. The parent rotates through the
-libraries three times, so 27 samples per cell, and keeps the median. Libraries
+libraries three times, so 27 samples per cell, and reports the median with half
+the interquartile range; two cells whose ranges overlap are not a result. Libraries
 never share a heap or JIT feedback; in an earlier version that ran all of them
 in one loop, the order they were warmed in showed in the numbers.
 

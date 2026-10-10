@@ -82,7 +82,9 @@ export async function make (lib, body, scene) {
   }
   if (lib === '@cfworker/json-schema') {
     const { Validator } = require('@cfworker/json-schema')
-    const v = new Validator(schema, '2020-12', false)
+    // Short-circuit on for the verdict (stop at the first failure), off for
+    // the errors scene (collect them all).
+    const v = new Validator(schema, '2020-12', scene === 'verdict')
     return verdictOrErrors(scene, (d) => v.validate(d))
   }
   if (lib === 'typia') {
