@@ -8,6 +8,17 @@ pattern, quantity, price and a currency enum, a shipping address, a uuid, an ema
 a date-time. 900 valid orders from a generated corpus, parsed once; every library sees
 the same objects.
 
+## The video
+
+![Valid order bodies per second](media/race-valid.gif)
+
+Full quality: [media/race-valid-hq.mp4](media/race-valid-hq.mp4) (1920x1600, 60 fps).
+The same with code generation refused, the rule Cloudflare Workers enforce:
+[media/race-blocked-valid-hq.mp4](media/race-blocked-valid-hq.mp4), preview below.
+Also in `media/`: the invalid-body runs and an ata against @cfworker/json-schema cut.
+
+![With new Function refused](media/race-blocked-valid.gif)
+
 ## Results, 2026-10-10
 
 Node 25.2.1, Apple M4 Pro, ata-validator 1.48.0 plus the master commits up to cb8d563
