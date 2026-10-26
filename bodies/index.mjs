@@ -103,3 +103,14 @@ export const bodies = {
 }
 
 for (const [name, b] of Object.entries(bodies)) b.name = name
+
+// Every document as a server receives it: parsed from JSON text. The sets
+// above are built with structuredClone and `delete`, and V8 keeps an object
+// it has deleted a key from in dictionary mode, where reading its keys or
+// serialising it costs several times what it costs on a parsed body (168 ns
+// against 44 for JSON.stringify of a three-key user). No request body arrives
+// in that state, and before 2026-10-26 every invalid user with a missing name
+// and every config document with an optional key dropped was one.
+for (const b of Object.values(bodies)) {
+  for (const set of Object.keys(b.docs)) b.docs[set] = b.docs[set].map((d) => JSON.parse(JSON.stringify(d)))
+}

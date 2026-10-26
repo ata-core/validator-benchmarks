@@ -31,6 +31,14 @@ which optional keys they carry: an earlier version repeated one document 120
 times, which let every engine learn a single shape, and ata's lead on that body
 fell from 4.6x to 1.5x when it was fixed.
 
+Every document reaches the libraries as a server receives it, parsed from JSON
+text (since 2026-10-26). The sets are built with structuredClone and `delete`,
+and V8 keeps an object it has deleted a key from in dictionary mode, which no
+request body is in; before the round trip, an invalid user missing its name
+and most config documents were. On the config body every compiled validator's
+verdict on valid documents fell to between a third and a half with the change,
+the same for all of them; the interpreted rows rose.
+
 ## Scenes
 
 | scene | what is timed |

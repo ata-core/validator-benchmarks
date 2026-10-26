@@ -2,7 +2,7 @@
 
 2026-10-26, Node v24.19.0, Apple M4 Pro (darwin arm64). One library per process, three passes in rotation, median of 27 samples. Source: `results/2026-10-26-merts-macbook-pro-node24.json`.
 
-Versions: ata-validator 1.60.0, ajv 8.20.0, ajv-formats 3.0.1, @exodus/schemasafe 1.3.0, @cfworker/json-schema 4.1.1, @sinclair/typebox 0.34.52, typia 15.1.0, zod 4.6.5, valibot 1.5.0, fastest-validator 1.19.1
+Versions: ata-validator 1.61.0, ajv 8.20.0, ajv-formats 3.0.1, @exodus/schemasafe 1.3.0, @cfworker/json-schema 4.1.1, @sinclair/typebox 0.34.52, typia 15.1.0, zod 4.6.5, valibot 1.5.0, fastest-validator 1.19.1
 
 Each cell is the median documents a second, with ± half the interquartile range of the 27 samples as a percentage of the median. Two numbers whose ranges overlap are not a result.
 
@@ -28,34 +28,34 @@ valid documents, the verdict only.
 
 | library | user (4 fields, a sign-up form) /s | order (customer, items, address, formats and a pattern) /s | config (25 sections, 30 KB schema, 10 KB document) /s |
 |---|---:|---:|---:|
-| ata (compiled) | 14,741,740 ±1% | 3,428,794 ±3% | 43,185 ±1% |
-| ata | 13,545,019 ±3% | 3,269,777 ±2% | 43,271 ±2% |
-| typebox | 12,327,485 ±1% | 1,682,559 ±1% | no equivalent written |
-| fastest-validator | 10,962,951 ±2% | 1,727,334 ±1% | no equivalent written |
-| @exodus/schemasafe | 9,889,492 ±2% | 837,264 ±2% | 30,682 ±2% |
-| ajv | 8,809,138 ±2% | 1,278,082 ±3% | 27,856 ±2% |
-| ata-validator/lite | 6,713,287 ±2% | 1,137,166 ±1% | 32,167 ±2% |
-| typia | 6,668,726 ±4% | 983,749 ±1% | no equivalent written |
-| typebox (Value.Check) | 5,287,109 ±1% | 292,530 ±2% | no equivalent written |
-| valibot | 4,379,925 ±1% | 486,543 ±1% | no equivalent written |
-| zod | 3,668,931 ±1% | 440,417 ±1% | no equivalent written |
-| @cfworker/json-schema | 573,759 ±1% | 55,700 ±1% | 2,908 ±3% |
+| ata (compiled) | 14,346,090 ±2% | 3,461,715 ±2% | 14,708 ±4% |
+| ata | 12,447,288 ±3% | 3,317,787 ±2% | 13,871 ±5% |
+| typebox | 11,635,362 ±3% | 1,653,496 ±1% | no equivalent written |
+| fastest-validator | 10,552,025 ±2% | 1,722,007 ±1% | no equivalent written |
+| @exodus/schemasafe | 9,598,255 ±2% | 853,451 ±1% | 13,557 ±4% |
+| ajv | 8,464,099 ±3% | 1,284,793 ±2% | 13,049 ±3% |
+| typia | 6,546,987 ±1% | 979,099 ±2% | no equivalent written |
+| ata-validator/lite | 6,499,439 ±1% | 1,137,686 ±2% | 48,316 ±5% |
+| typebox (Value.Check) | 5,256,637 ±1% | 291,076 ±1% | no equivalent written |
+| valibot | 4,345,917 ±2% | 489,021 ±0% | no equivalent written |
+| zod | 3,599,836 ±1% | 443,548 ±1% | no equivalent written |
+| @cfworker/json-schema | 567,831 ±3% | 55,933 ±1% | 1,471 ±96% |
 
 Relative to `ata` (above 1 means slower than ata):
 
 | library | user | order | config |
 |---|---:|---:|---:|
-| ata (compiled) | 0.92x | 0.95x | 1.00x |
-| typebox | 1.10x | 1.94x |  |
-| fastest-validator | 1.24x | 1.89x |  |
-| @exodus/schemasafe | 1.37x | 3.91x | 1.41x |
-| ajv | 1.54x | 2.56x | 1.55x |
-| ata-validator/lite | 2.02x | 2.88x | 1.35x |
-| typia | 2.03x | 3.32x |  |
-| typebox (Value.Check) | 2.56x | 11.18x |  |
-| valibot | 3.09x | 6.72x |  |
-| zod | 3.69x | 7.42x |  |
-| @cfworker/json-schema | 23.61x | 58.70x | 14.88x |
+| ata (compiled) | 0.87x | 0.96x | 0.94x |
+| typebox | 1.07x | 2.01x |  |
+| fastest-validator | 1.18x | 1.93x |  |
+| @exodus/schemasafe | 1.30x | 3.89x | 1.02x |
+| ajv | 1.47x | 2.58x | 1.06x |
+| typia | 1.90x | 3.39x |  |
+| ata-validator/lite | 1.92x | 2.92x | 0.29x |
+| typebox (Value.Check) | 2.37x | 11.40x |  |
+| valibot | 2.86x | 6.78x |  |
+| zod | 3.46x | 7.48x |  |
+| @cfworker/json-schema | 21.92x | 59.32x | 9.43x |
 
 ## verdict-invalid
 
@@ -63,34 +63,34 @@ invalid documents, the verdict only.
 
 | library | user (4 fields, a sign-up form) /s | order (customer, items, address, formats and a pattern) /s | config (25 sections, 30 KB schema, 10 KB document) /s |
 |---|---:|---:|---:|
-| ajv | 15,436,586 ±7% | 3,319,154 ±2% | 24,120 ±0% |
-| typebox | 14,254,860 ±2% | 4,245,701 ±1% | no equivalent written |
-| ata (compiled) | 13,786,698 ±2% | 4,804,368 ±3% | 27,315 ±0% |
-| @exodus/schemasafe | 12,608,783 ±4% | 1,788,517 ±1% | 27,081 ±1% |
-| ata | 11,214,953 ±4% | 4,820,205 ±2% | 27,370 ±0% |
-| typia | 7,635,819 ±3% | 2,406,039 ±1% | no equivalent written |
-| typebox (Value.Check) | 7,022,833 ±2% | 765,640 ±2% | no equivalent written |
-| ata-validator/lite | 6,973,262 ±2% | 2,400,061 ±1% | 92,479 ±1% |
-| fastest-validator | 2,691,299 ±1% | 1,121,834 ±1% | no equivalent written |
-| valibot | 1,772,413 ±1% | 427,054 ±1% | no equivalent written |
-| zod | 1,541,941 ±13% | 355,908 ±2% | no equivalent written |
-| @cfworker/json-schema | 446,753 ±1% | 130,378 ±3% | 6,155 ±3% |
+| ajv | 16,909,232 ±7% | 3,720,960 ±3% | 27,022 ±2% |
+| typebox | 14,506,823 ±33% | 4,827,502 ±3% | no equivalent written |
+| ata (compiled) | 14,170,277 ±1% | 5,967,150 ±3% | 30,545 ±5% |
+| @exodus/schemasafe | 13,381,398 ±4% | 2,016,550 ±1% | 30,063 ±2% |
+| ata | 11,156,237 ±8% | 5,900,906 ±3% | 30,841 ±1% |
+| typia | 8,566,945 ±5% | 2,844,674 ±2% | no equivalent written |
+| ata-validator/lite | 8,040,338 ±2% | 2,649,996 ±1% | 97,733 ±10% |
+| typebox (Value.Check) | 7,383,354 ±6% | 835,708 ±1% | no equivalent written |
+| valibot | 3,909,438 ±2% | 462,102 ±1% | no equivalent written |
+| fastest-validator | 2,950,435 ±1% | 1,232,078 ±3% | no equivalent written |
+| zod | 1,663,557 ±14% | 385,174 ±3% | no equivalent written |
+| @cfworker/json-schema | 809,347 ±1% | 142,059 ±2% | 6,559 ±46% |
 
 Relative to `ata` (above 1 means slower than ata):
 
 | library | user | order | config |
 |---|---:|---:|---:|
-| ajv | 0.73x | 1.45x | 1.13x |
-| typebox | 0.79x | 1.14x |  |
-| ata (compiled) | 0.81x | 1.00x | 1.00x |
-| @exodus/schemasafe | 0.89x | 2.70x | 1.01x |
-| typia | 1.47x | 2.00x |  |
-| typebox (Value.Check) | 1.60x | 6.30x |  |
-| ata-validator/lite | 1.61x | 2.01x | 0.30x |
-| fastest-validator | 4.17x | 4.30x |  |
-| valibot | 6.33x | 11.29x |  |
-| zod | 7.27x | 13.54x |  |
-| @cfworker/json-schema | 25.10x | 36.97x | 4.45x |
+| ajv | 0.66x | 1.59x | 1.14x |
+| typebox | 0.77x | 1.22x |  |
+| ata (compiled) | 0.79x | 0.99x | 1.01x |
+| @exodus/schemasafe | 0.83x | 2.93x | 1.03x |
+| typia | 1.30x | 2.07x |  |
+| ata-validator/lite | 1.39x | 2.23x | 0.32x |
+| typebox (Value.Check) | 1.51x | 7.06x |  |
+| valibot | 2.85x | 12.77x |  |
+| fastest-validator | 3.78x | 4.79x |  |
+| zod | 6.71x | 15.32x |  |
+| @cfworker/json-schema | 13.78x | 41.54x | 4.70x |
 
 ## errors-invalid
 
@@ -98,36 +98,36 @@ invalid documents, every error produced and iterated.
 
 | library | user (4 fields, a sign-up form) /s | order (customer, items, address, formats and a pattern) /s | config (25 sections, 30 KB schema, 10 KB document) /s |
 |---|---:|---:|---:|
-| ajv | 6,845,389 ±2% | 1,216,319 ±1% | 11,945 ±0% |
-| @exodus/schemasafe | 5,519,228 ±3% | 625,080 ±1% | 11,552 ±1% |
-| ata richErrors:false | 4,767,399 ±2% | 2,824,637 ±2% | 13,212 ±1% |
-| ata (compiled) | 4,105,151 ±3% | 936,759 ±1% | 9,876 ±1% |
-| fastest-validator | 2,772,494 ±1% | 1,135,091 ±0% | no equivalent written |
-| ata | 2,246,872 ±2% | 1,550,312 ±1% | 12,054 ±3% |
-| typia | 2,134,896 ±1% | 546,278 ±1% | no equivalent written |
-| ata-validator/lite | 1,811,155 ±1% | 436,828 ±1% | 22,460 ±2% |
-| valibot | 1,790,134 ±1% | 436,994 ±1% | no equivalent written |
-| typebox | 1,202,520 ±1% | 116,192 ±1% | no equivalent written |
-| typebox (Value.Check) | 1,103,661 ±1% | 102,070 ±1% | no equivalent written |
-| zod | 812,463 ±2% | 282,627 ±1% | no equivalent written |
-| @cfworker/json-schema | 360,715 ±1% | 57,050 ±2% | 2,952 ±2% |
+| ajv | 7,629,811 ±2% | 1,274,767 ±2% | 12,303 ±2% |
+| @exodus/schemasafe | 6,029,308 ±1% | 675,572 ±1% | 11,982 ±1% |
+| ata (compiled) | 5,870,509 ±2% | 1,747,431 ±3% | 11,440 ±1% |
+| ata richErrors:false | 5,494,086 ±1% | 3,290,563 ±2% | 13,622 ±2% |
+| ata | 3,771,818 ±1% | 1,869,071 ±1% | 12,702 ±2% |
+| valibot | 3,739,848 ±1% | 436,109 ±1% | no equivalent written |
+| fastest-validator | 2,747,806 ±1% | 1,166,943 ±1% | no equivalent written |
+| typia | 2,188,309 ±3% | 560,863 ±1% | no equivalent written |
+| ata-validator/lite | 2,179,407 ±2% | 464,211 ±1% | 22,700 ±1% |
+| typebox | 1,240,997 ±1% | 118,060 ±1% | no equivalent written |
+| typebox (Value.Check) | 1,129,457 ±1% | 102,229 ±1% | no equivalent written |
+| zod | 841,884 ±1% | 292,399 ±2% | no equivalent written |
+| @cfworker/json-schema | 595,592 ±1% | 57,350 ±1% | 3,003 ±2% |
 
 Relative to `ata` (above 1 means slower than ata):
 
 | library | user | order | config |
 |---|---:|---:|---:|
-| ajv | 0.33x | 1.27x | 1.01x |
-| @exodus/schemasafe | 0.41x | 2.48x | 1.04x |
-| ata richErrors:false | 0.47x | 0.55x | 0.91x |
-| ata (compiled) | 0.55x | 1.65x | 1.22x |
-| fastest-validator | 0.81x | 1.37x |  |
-| typia | 1.05x | 2.84x |  |
-| ata-validator/lite | 1.24x | 3.55x | 0.54x |
-| valibot | 1.26x | 3.55x |  |
-| typebox | 1.87x | 13.34x |  |
-| typebox (Value.Check) | 2.04x | 15.19x |  |
-| zod | 2.77x | 5.49x |  |
-| @cfworker/json-schema | 6.23x | 27.17x | 4.08x |
+| ajv | 0.49x | 1.47x | 1.03x |
+| @exodus/schemasafe | 0.63x | 2.77x | 1.06x |
+| ata (compiled) | 0.64x | 1.07x | 1.11x |
+| ata richErrors:false | 0.69x | 0.57x | 0.93x |
+| valibot | 1.01x | 4.29x |  |
+| fastest-validator | 1.37x | 1.60x |  |
+| typia | 1.72x | 3.33x |  |
+| ata-validator/lite | 1.73x | 4.03x | 0.56x |
+| typebox | 3.04x | 15.83x |  |
+| typebox (Value.Check) | 3.34x | 18.28x |  |
+| zod | 4.48x | 6.39x |  |
+| @cfworker/json-schema | 6.33x | 32.59x | 4.23x |
 
 ## blocked-verdict-valid
 
@@ -135,14 +135,14 @@ valid documents, the verdict, with new Function refused.
 
 | library | user (4 fields, a sign-up form) /s | order (customer, items, address, formats and a pattern) /s | config (25 sections, 30 KB schema, 10 KB document) /s |
 |---|---:|---:|---:|
-| ata (compiled) | 14,865,334 ±3% | 3,437,998 ±4% | 44,871 ±3% |
-| ata | 6,730,305 ±1% | 1,143,231 ±2% | 35,324 ±5% |
-| ata-validator/lite | 6,714,140 ±5% | 1,143,630 ±3% | 33,363 ±1% |
-| typia | 6,585,091 ±6% | 969,193 ±1% | no equivalent written |
-| typebox (Value.Check) | 5,265,375 ±1% | 298,605 ±2% | no equivalent written |
-| valibot | 4,339,409 ±1% | 492,910 ±2% | no equivalent written |
-| zod | 2,543,353 ±1% | 240,653 ±4% | no equivalent written |
-| @cfworker/json-schema | 582,877 ±2% | 56,765 ±2% | 3,009 ±3% |
+| ata (compiled) | 14,145,808 ±5% | 3,491,473 ±3% | 13,819 ±2% |
+| typia | 6,680,254 ±3% | 980,388 ±2% | no equivalent written |
+| ata-validator/lite | 6,536,632 ±3% | 1,131,534 ±2% | 42,609 ±6% |
+| ata | 6,523,172 ±1% | 1,136,383 ±1% | 44,939 ±3% |
+| typebox (Value.Check) | 5,340,767 ±1% | 294,701 ±1% | no equivalent written |
+| valibot | 4,378,069 ±3% | 485,709 ±1% | no equivalent written |
+| zod | 2,592,514 ±1% | 240,179 ±2% | no equivalent written |
+| @cfworker/json-schema | 583,940 ±1% | 56,677 ±1% | 2,949 ±1% |
 | ajv | EvalError | EvalError | EvalError |
 | @exodus/schemasafe | EvalError | EvalError | EvalError |
 | typebox | EvalError | EvalError | no equivalent written |
@@ -152,13 +152,13 @@ Relative to `ata` (above 1 means slower than ata):
 
 | library | user | order | config |
 |---|---:|---:|---:|
-| ata (compiled) | 0.45x | 0.33x | 0.79x |
-| ata-validator/lite | 1.00x | 1.00x | 1.06x |
-| typia | 1.02x | 1.18x |  |
-| typebox (Value.Check) | 1.28x | 3.83x |  |
-| valibot | 1.55x | 2.32x |  |
-| zod | 2.65x | 4.75x |  |
-| @cfworker/json-schema | 11.55x | 20.14x | 11.74x |
+| ata (compiled) | 0.46x | 0.33x | 3.25x |
+| typia | 0.98x | 1.16x |  |
+| ata-validator/lite | 1.00x | 1.00x | 1.05x |
+| typebox (Value.Check) | 1.22x | 3.86x |  |
+| valibot | 1.49x | 2.34x |  |
+| zod | 2.52x | 4.73x |  |
+| @cfworker/json-schema | 11.17x | 20.05x | 15.24x |
 | ajv |  |  |  |
 | @exodus/schemasafe |  |  |  |
 | typebox |  |  |  |
