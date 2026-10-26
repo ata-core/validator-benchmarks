@@ -21,6 +21,7 @@ export const libs = {
   'typebox (Value.Check)': { blocked: true, kind: 'equivalent' },
   zod: { blocked: true, kind: 'equivalent' },
   valibot: { blocked: true, kind: 'equivalent' },
+  'fastest-validator': { blocked: false, kind: 'equivalent' },
 }
 
 export function versions () {
@@ -28,7 +29,7 @@ export function versions () {
   const fs = require('node:fs')
   const v = (p) => JSON.parse(fs.readFileSync(new URL(`../node_modules/${p}/package.json`, import.meta.url), 'utf8')).version
   const out = {}
-  for (const p of ['ata-validator', 'ajv', 'ajv-formats', '@exodus/schemasafe', '@cfworker/json-schema', '@sinclair/typebox', 'typia', 'zod', 'valibot']) out[p] = v(p)
+  for (const p of ['ata-validator', 'ajv', 'ajv-formats', '@exodus/schemasafe', '@cfworker/json-schema', '@sinclair/typebox', 'typia', 'zod', 'valibot', 'fastest-validator']) out[p] = v(p)
   return out
 }
 
@@ -115,6 +116,14 @@ export async function make (lib, body, scene) {
     const v = await import('valibot')
     const s = body.valibot
     return scene === 'verdict' ? (d) => v.safeParse(s, d).success : (d) => { const r = v.safeParse(s, d, { abortEarly: false }); return r.success ? 0 : count(r.issues) }
+  }
+  if (lib === 'fastest-validator') {
+    // The compiled check returns true, or the array of errors; `errors` is
+    // that array, the verdict the comparison with true. Compiled with
+    // `new Function`, so it is out of the blocked scene.
+    const FV = require('fastest-validator')
+    const check = new FV().compile(body.fv)
+    return scene === 'verdict' ? (d) => check(d) === true : (d) => { const r = check(d); return r === true ? 0 : count(r) }
   }
   throw new Error('unknown lib ' + lib)
 }

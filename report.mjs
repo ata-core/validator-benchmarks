@@ -20,6 +20,7 @@ for (const [lib, call, extra] of [
   ['typia', '`is` / `equals`', 'nothing'],
   ['zod', '`safeParse(d).success`', 'returns a parsed copy of the data, unknown keys stripped'],
   ['valibot', '`safeParse(schema, d).success`', 'returns a parsed copy of the data'],
+  ['fastest-validator', 'the compiled function `=== true`', 'builds the array of errors on a refusal'],
 ]) lines.push(`| ${lib} | ${call} | ${extra} |`)
 lines.push('', 'Formats (email, uuid, date-time) are checked by each library\'s own rules, which differ in strictness; every library accepts every valid document and rejects every invalid one here, which the runner checks before timing.', '')
 for (const [sceneName, sc] of Object.entries(r.scenes)) {

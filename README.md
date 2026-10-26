@@ -18,10 +18,10 @@ uses it.
 
 ## Bodies
 
-| body | what it is | zod, valibot, typebox versions |
+| body | what it is | zod, valibot, typebox, fastest-validator versions |
 |---|---|---|
-| user | 4 fields, a sign-up form (`bodies/user.schema.json`) | written by hand in `bodies/index.mjs`; typia in `typia/src` |
-| order | customer, items with a sku pattern, address, uuid/email/date-time formats (`bodies/order.schemas.mjs`) | `bodies/order.*.mjs`; typia in `typia/src` |
+| user | 4 fields, a sign-up form (`bodies/user.schema.json`) | written by hand in `bodies/index.mjs` and `bodies/fv.mjs`; typia in `typia/src` |
+| order | customer, items with a sku pattern, address, uuid/email/date-time formats (`bodies/order.schemas.mjs`) | `bodies/order.*.mjs` and `bodies/fv.mjs`; typia in `typia/src` |
 | config | 25 sections, 30 KB of schema, 10 KB of document, shared definitions, `additionalProperties: false` | not written; JSON Schema libraries only |
 
 Documents are generated deterministically or come from a committed corpus, so
@@ -45,7 +45,7 @@ fell from 4.6x to 1.5x when it was fixed.
 ata-validator (runtime, the compiled module of `ata compile`, the `/lite` entry
 without the code generator, and `richErrors: false` in the errors scene), ajv
 with ajv-formats, @exodus/schemasafe, @cfworker/json-schema, typebox
-(TypeCompiler and Value.Check), typia, zod, valibot. Formats are asserted
+(TypeCompiler and Value.Check), typia, zod, valibot, fastest-validator. Formats are asserted
 everywhere; typebox takes ajv-formats' checkers through its FormatRegistry.
 
 typia validates TypeScript types, compiled at build time: `typia/src/validators.ts`

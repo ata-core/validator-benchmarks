@@ -9,6 +9,7 @@ import { Type } from '@sinclair/typebox'
 import { JsonOrder, ZodOrder } from './order.schemas.mjs'
 import { TbOrder } from './order.typebox.mjs'
 import { VbOrder } from './order.valibot.mjs'
+import { FvUser, FvOrder } from './fv.mjs'
 
 const here = (f) => new URL(f, import.meta.url)
 const json = (f) => JSON.parse(readFileSync(here(f), 'utf8'))
@@ -96,8 +97,8 @@ const configValidSet = Array.from({ length: 120 }, () => varyConfig(configValid)
 const configs = { valid: configValidSet, invalid: configValidSet.map((d, i) => breakConfig(d, i)) }
 
 export const bodies = {
-  user: { schema: userSchema, zod: ZodUser, valibot: VbUser, typebox: TbUser, docs: users, about: '4 fields, a sign-up form' },
-  order: { schema: JsonOrder, zod: ZodOrder, valibot: VbOrder, typebox: TbOrder, docs: orders, about: 'customer, items, address, formats and a pattern' },
+  user: { schema: userSchema, zod: ZodUser, valibot: VbUser, typebox: TbUser, fv: FvUser, docs: users, about: '4 fields, a sign-up form' },
+  order: { schema: JsonOrder, zod: ZodOrder, valibot: VbOrder, typebox: TbOrder, fv: FvOrder, docs: orders, about: 'customer, items, address, formats and a pattern' },
   config: { schema: configSchema, docs: configs, about: '25 sections, 30 KB schema, 10 KB document' },
 }
 
