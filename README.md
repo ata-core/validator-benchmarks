@@ -67,6 +67,37 @@ string, about half of its time on the order body; typia 15.2.2 reuses the RegExp
 and accepts a string by its UTF-16 length where that already decides, after a
 report from this benchmark (samchon/typia#2504). The runs below use 15.2.2.
 
+## SchemaStore: every schema with sample documents
+
+The bodies above are three. [SchemaStore](https://github.com/SchemaStore/schemastore) holds
+about a thousand real schemas, the configuration files of editors, build tools and services,
+and for 446 of them the samples their own authors wrote. `schemastore/run.cjs` builds ajv and
+ata for each schema and times both on the samples both accept, microseconds per document, the
+median of five windows after warm-up, each engine in turn. ata runs with `useDefaults: false`,
+the contract ajv has by default. Node 24, ata-validator 1.61.3, ajv 8.20.0, corpus pinned at
+ce64da2; the full tables, including every schema where ata is slower, are in
+[RESULTS-schemastore.md](RESULTS-schemastore.md) and [RESULTS-schemastore-node25.md](RESULTS-schemastore-node25.md).
+
+| schema size | schemas | ajv time / ata time, median | ata slower on |
+|---|---|---|---|
+| under 10 KB | 264 | 1.69x | 10 |
+| 10 to 50 KB | 142 | 2.43x | 5 |
+| 50 to 200 KB | 35 | 2.82x | 1 |
+| over 200 KB | 5 | 1.59x | 0 |
+| all | 446 | 1.83x | 16 |
+
+The 16 where ata is slower are all between 0.74x and 1.00x, most of them documents under a
+microsecond where the call itself is the cost; the worst is `now` at 0.74x. The largest
+generated program on the ajv side is 5.2 MB of source for one schema (utcm-monitor); ata splits
+a large schema into functions the engine can optimize, which is where the 50 to 200 KB bucket's
+2.82x comes from. One schema is left out because the two validators disagree on a sample
+(webjob-publish-settings, a draft-07 `$ref` with siblings, which ata reads as the draft says).
+
+```bash
+sh schemastore/fetch.sh      # the corpus, shallow, at the pinned commit
+npm run schemastore          # RESULTS-schemastore.md, about ten minutes
+```
+
 ## What this does not measure
 
 Parsing the JSON text, cold start, the time to compile a schema, and bundle

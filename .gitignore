@@ -5,3 +5,4 @@ preview*.png
 /*.mp4
 typia/dist
 .wrangler
+schemastore-corpus/

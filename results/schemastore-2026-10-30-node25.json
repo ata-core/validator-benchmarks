@@ -1,0 +1,4027 @@
+{
+ "date": "2026-10-30T21:37:10.364Z",
+ "node": "v25.2.1",
+ "cpu": "Apple M4 Pro",
+ "versions": {
+  "ata-validator": "1.61.3",
+  "ajv": "8.20.0",
+  "ajv-formats": "3.0.1"
+ },
+ "corpus": "ce64da2",
+ "rows": [
+  {
+   "name": "abc-clinical-demand-forecast-1.0.0",
+   "size": 40926,
+   "docs": 1,
+   "ajvSrc": 71572,
+   "ajv": 4.003594575660529,
+   "ata": 0.9584730914841616,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-clinical-demand-forecast-2.0.0",
+   "size": 41426,
+   "docs": 1,
+   "ajvSrc": 71572,
+   "ajv": 4.066133868672495,
+   "ata": 0.9895225113793785,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-clinical-demand-forecast-3.0.0",
+   "size": 43212,
+   "docs": 1,
+   "ajvSrc": 71572,
+   "ajv": 4.137298686523943,
+   "ata": 0.9907489968791797,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-clinical-demand-forecast-4.0.0",
+   "size": 43808,
+   "docs": 1,
+   "ajvSrc": 71572,
+   "ajv": 4.268370251813914,
+   "ata": 0.9919857405019343,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-clinical-demand-forecast-5.0.0",
+   "size": 47746,
+   "docs": 1,
+   "ajvSrc": 19005,
+   "ajv": 6.389135122184954,
+   "ata": 2.6593815317112086,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-clinical-demand-forecast-5.1.0",
+   "size": 50721,
+   "docs": 1,
+   "ajvSrc": 19005,
+   "ajv": 6.643809167912307,
+   "ata": 2.7388137624101336,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-inventory-module-data-1.0.0",
+   "size": 13189,
+   "docs": 1,
+   "ajvSrc": 31206,
+   "ajv": 11.464493982808023,
+   "ata": 3.1334338868870435,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-inventory-module-data-2.0.0",
+   "size": 13029,
+   "docs": 1,
+   "ajvSrc": 31208,
+   "ajv": 10.883399075081611,
+   "ata": 3.1558941222879686,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-inventory-module-data-3.0.0",
+   "size": 13297,
+   "docs": 1,
+   "ajvSrc": 31423,
+   "ajv": 11.322117463911688,
+   "ata": 3.432046332046332,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-inventory-module-data-4.0.0",
+   "size": 14073,
+   "docs": 1,
+   "ajvSrc": 31423,
+   "ajv": 11.41210325156874,
+   "ata": 3.225413965489437,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-inventory-module-data-5.1.0",
+   "size": 15494,
+   "docs": 1,
+   "ajvSrc": 34671,
+   "ajv": 11.450880080137377,
+   "ata": 3.336088816612459,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-inventory-module-data-5.2.0",
+   "size": 15480,
+   "docs": 1,
+   "ajvSrc": 34672,
+   "ajv": 11.604390194371918,
+   "ata": 3.5754826599928498,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-inventory-module-data-5.3.0",
+   "size": 16887,
+   "docs": 1,
+   "ajvSrc": 34672,
+   "ajv": 11.40602138579983,
+   "ata": 3.2574545602605864,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-inventory-module-data-5.4.0",
+   "size": 17217,
+   "docs": 1,
+   "ajvSrc": 34672,
+   "ajv": 12.398099473194918,
+   "ata": 3.4147494451084173,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-1.0.0",
+   "size": 16342,
+   "docs": 1,
+   "ajvSrc": 5210,
+   "ajv": 5.343986641731232,
+   "ata": 2.1773146636185503,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-10.0.0",
+   "size": 29571,
+   "docs": 1,
+   "ajvSrc": 81818,
+   "ajv": 9.180405920146857,
+   "ata": 3.658546003292482,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-10.1.0",
+   "size": 29755,
+   "docs": 1,
+   "ajvSrc": 83349,
+   "ajv": 9.519811994288434,
+   "ata": 3.564822653952411,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-11.0.0",
+   "size": 31433,
+   "docs": 1,
+   "ajvSrc": 97482,
+   "ajv": 9.122139794754847,
+   "ata": 3.742165575304022,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-11.1.0",
+   "size": 31343,
+   "docs": 1,
+   "ajvSrc": 96027,
+   "ajv": 9.4594171198865,
+   "ata": 3.49548890248165,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-11.2.0",
+   "size": 31741,
+   "docs": 1,
+   "ajvSrc": 98313,
+   "ajv": 9.46053038543391,
+   "ata": 3.6047842660178424,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-11.3.0",
+   "size": 32701,
+   "docs": 1,
+   "ajvSrc": 101033,
+   "ajv": 9.462945364238411,
+   "ata": 3.7251273048984914,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-11.4.0",
+   "size": 32704,
+   "docs": 1,
+   "ajvSrc": 101203,
+   "ajv": 9.59721904990403,
+   "ata": 3.691250622866107,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-12.0.0",
+   "size": 32977,
+   "docs": 1,
+   "ajvSrc": 101203,
+   "ajv": 9.229171395617069,
+   "ata": 3.6557187899835495,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-13.0.0",
+   "size": 35034,
+   "docs": 1,
+   "ajvSrc": 101203,
+   "ajv": 9.478589196872779,
+   "ata": 3.6655021533950336,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-14.0.0",
+   "size": 37061,
+   "docs": 1,
+   "ajvSrc": 21180,
+   "ajv": 4.7171089622641516,
+   "ata": 1.2819453898663589,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-14.1.0",
+   "size": 39732,
+   "docs": 1,
+   "ajvSrc": 21180,
+   "ajv": 4.736930136175252,
+   "ata": 1.2400654741606472,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-14.2.0",
+   "size": 40027,
+   "docs": 1,
+   "ajvSrc": 21180,
+   "ajv": 4.976574894252302,
+   "ata": 1.2774185029060483,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-2.0.0",
+   "size": 16525,
+   "docs": 1,
+   "ajvSrc": 5973,
+   "ajv": 5.4943461063040795,
+   "ata": 2.1812947431562875,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-3.0.0",
+   "size": 20241,
+   "docs": 1,
+   "ajvSrc": 5973,
+   "ajv": 4.478973015339828,
+   "ata": 1.5121441802442066,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-4.0.0",
+   "size": 20851,
+   "docs": 1,
+   "ajvSrc": 5973,
+   "ajv": 4.7026363743240065,
+   "ata": 1.6081283267669053,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-5.0.0",
+   "size": 21038,
+   "docs": 1,
+   "ajvSrc": 5973,
+   "ajv": 4.903922030158146,
+   "ata": 1.5969621925902269,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-6.0.0",
+   "size": 21178,
+   "docs": 1,
+   "ajvSrc": 5973,
+   "ajv": 4.778974077171186,
+   "ata": 1.6666180575809342,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-7.0.0",
+   "size": 25575,
+   "docs": 1,
+   "ajvSrc": 63579,
+   "ajv": 8.64469878997407,
+   "ata": 3.4992200839748073,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-8.0.0",
+   "size": 27680,
+   "docs": 1,
+   "ajvSrc": 76358,
+   "ajv": 8.695933043478261,
+   "ata": 3.39511186555763,
+   "engine": "codegen"
+  },
+  {
+   "name": "abc-supply-plan-9.0.0",
+   "size": 28199,
+   "docs": 1,
+   "ajvSrc": 78318,
+   "ajv": 8.90284887602938,
+   "ata": 3.5771632835553966,
+   "engine": "codegen"
+  },
+  {
+   "name": "agripparc-1.2",
+   "size": 2150,
+   "docs": 3,
+   "ajvSrc": 8038,
+   "ajv": 0.08642544470875978,
+   "ata": 0.039503066896967864,
+   "engine": "codegen"
+  },
+  {
+   "name": "agripparc-1.3",
+   "size": 2431,
+   "docs": 3,
+   "ajvSrc": 8770,
+   "ajv": 0.10219291858596544,
+   "ata": 0.046046671317336876,
+   "engine": "codegen"
+  },
+  {
+   "name": "agripparc-1.4",
+   "size": 2604,
+   "docs": 3,
+   "ajvSrc": 9537,
+   "ajv": 0.11521336916416801,
+   "ata": 0.053979983185497966,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiconfig-1.0",
+   "size": 5699,
+   "docs": 3,
+   "ajvSrc": 22785,
+   "ajv": 0.07703100645317836,
+   "ata": 0.0450479485377588,
+   "engine": "codegen"
+  },
+  {
+   "name": "aih-config",
+   "size": 570,
+   "docs": 1,
+   "ajvSrc": 4890,
+   "ajv": 0.04997981092893717,
+   "ata": 0.04123924520832238,
+   "engine": "codegen"
+  },
+  {
+   "name": "aih-org-policy",
+   "size": 3056,
+   "docs": 1,
+   "ajvSrc": 38759,
+   "ajv": 0.11115788947153421,
+   "ata": 0.0593274852239946,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.0",
+   "size": 6119,
+   "docs": 1,
+   "ajvSrc": 62984,
+   "ajv": 0.11132765477797414,
+   "ata": 0.06773619594501916,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.1",
+   "size": 8176,
+   "docs": 1,
+   "ajvSrc": 70998,
+   "ajv": 0.11901680377251833,
+   "ata": 0.06929421068405014,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.10",
+   "size": 13124,
+   "docs": 2,
+   "ajvSrc": 100478,
+   "ajv": 0.1614417690457356,
+   "ata": 0.10875978009070443,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.11",
+   "size": 13138,
+   "docs": 2,
+   "ajvSrc": 100528,
+   "ajv": 0.12077116192845584,
+   "ata": 0.08564272684451676,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.2",
+   "size": 8181,
+   "docs": 1,
+   "ajvSrc": 71038,
+   "ajv": 0.12408655823750392,
+   "ata": 0.07551673242840151,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.3",
+   "size": 11580,
+   "docs": 1,
+   "ajvSrc": 94027,
+   "ajv": 0.09978338862973034,
+   "ata": 0.08991514131126242,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.4",
+   "size": 12280,
+   "docs": 1,
+   "ajvSrc": 97255,
+   "ajv": 0.10055872592890543,
+   "ata": 0.0902691278287793,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.5",
+   "size": 12864,
+   "docs": 1,
+   "ajvSrc": 102174,
+   "ajv": 0.1471377121059969,
+   "ata": 0.1127769830216022,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.6",
+   "size": 12875,
+   "docs": 1,
+   "ajvSrc": 102220,
+   "ajv": 0.1525292852567036,
+   "ata": 0.11303811318941863,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.7",
+   "size": 11977,
+   "docs": 1,
+   "ajvSrc": 95216,
+   "ajv": 0.13614021897835063,
+   "ata": 0.10147516413487981,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.8",
+   "size": 12906,
+   "docs": 1,
+   "ajvSrc": 100078,
+   "ajv": 0.1523110123637305,
+   "ata": 0.10407240517131476,
+   "engine": "codegen"
+  },
+  {
+   "name": "aiproj-1.9",
+   "size": 13435,
+   "docs": 1,
+   "ajvSrc": 102386,
+   "ajv": 0.08671060486834148,
+   "ata": 0.08451958721062906,
+   "engine": "codegen"
+  },
+  {
+   "name": "airlock-microgateway-3.0",
+   "size": 44606,
+   "docs": 1,
+   "ajvSrc": 301766,
+   "ajv": 0.22947848934937382,
+   "ata": 0.13086490545050056,
+   "engine": "codegen"
+  },
+  {
+   "name": "airlock-microgateway-3.1",
+   "size": 46457,
+   "docs": 1,
+   "ajvSrc": 322852,
+   "ajv": 0.3334934844050924,
+   "ata": 0.15316665262641965,
+   "engine": "codegen"
+  },
+  {
+   "name": "airlock-microgateway-3.2",
+   "size": 46459,
+   "docs": 1,
+   "ajvSrc": 322852,
+   "ajv": 0.3339316202926862,
+   "ata": 0.155600291749329,
+   "engine": "codegen"
+  },
+  {
+   "name": "algovoi-compliance-receipt-v1",
+   "size": 3829,
+   "docs": 3,
+   "ajvSrc": 6984,
+   "ajv": 0.17580341407029434,
+   "ata": 0.03771737258928815,
+   "engine": "codegen"
+  },
+  {
+   "name": "all-contributors",
+   "size": 3821,
+   "docs": 4,
+   "ajvSrc": 22360,
+   "ajv": 0.9079247843849297,
+   "ata": 0.11497207659320065,
+   "engine": "codegen"
+  },
+  {
+   "name": "amx-muse",
+   "size": 1367,
+   "docs": 2,
+   "ajvSrc": 4317,
+   "ajv": 0.04075233864805664,
+   "ata": 0.03598939139291164,
+   "engine": "codegen"
+  },
+  {
+   "name": "any",
+   "size": 215,
+   "docs": 1,
+   "ajvSrc": 2538,
+   "ajv": 0.030694959371554024,
+   "ata": 0.027408198280422194,
+   "engine": "codegen"
+  },
+  {
+   "name": "anywork-ac-1.1",
+   "size": 5643,
+   "docs": 1,
+   "ajvSrc": 37337,
+   "ajv": 0.9783111502433536,
+   "ata": 0.726161840791504,
+   "engine": "codegen"
+  },
+  {
+   "name": "apibuilder",
+   "size": 26327,
+   "docs": 1,
+   "ajvSrc": 12000,
+   "ajv": 62.05962480620155,
+   "ata": 38.05679657794677,
+   "engine": "codegen"
+  },
+  {
+   "name": "apple-app-site-association",
+   "size": 2643,
+   "docs": 2,
+   "ajvSrc": 14878,
+   "ajv": 0.5009439337774884,
+   "ata": 0.34869835416775635,
+   "engine": "codegen"
+  },
+  {
+   "name": "appsettings",
+   "size": 23839,
+   "docs": 8,
+   "ajvSrc": 18088,
+   "ajv": 0.8274579058414695,
+   "ata": 1.0119237403885066,
+   "engine": "codegen"
+  },
+  {
+   "name": "appsscript",
+   "size": 11696,
+   "docs": 1,
+   "ajvSrc": 46673,
+   "ajv": 0.7799466726460896,
+   "ata": 0.27257439182282794,
+   "engine": "codegen"
+  },
+  {
+   "name": "appveyor",
+   "size": 12464,
+   "docs": 2,
+   "ajvSrc": 427,
+   "ajv": 1.094867610028465,
+   "ata": 0.5104762251148545,
+   "engine": "codegen"
+  },
+  {
+   "name": "artifacthub-repo",
+   "size": 1075,
+   "docs": 4,
+   "ajvSrc": 6767,
+   "ajv": 0.06813613073783617,
+   "ata": 0.05622142154382414,
+   "engine": "codegen"
+  },
+  {
+   "name": "asconfig-schema",
+   "size": 5960,
+   "docs": 8,
+   "ajvSrc": 2990,
+   "ajv": 0.6239406663339157,
+   "ata": 0.5236775109970674,
+   "engine": "codegen"
+  },
+  {
+   "name": "asmdef",
+   "size": 3455,
+   "docs": 3,
+   "ajvSrc": 19881,
+   "ajv": 0.05463619352018795,
+   "ata": 0.04029622992007318,
+   "engine": "codegen"
+  },
+  {
+   "name": "aspire-8.0",
+   "size": 14463,
+   "docs": 68,
+   "ajvSrc": 160975,
+   "ajv": 10.155130070993915,
+   "ata": 3.619297275351858,
+   "engine": "codegen"
+  },
+  {
+   "name": "assetlinks",
+   "size": 2001,
+   "docs": 1,
+   "ajvSrc": 12539,
+   "ajv": 1.0430791154919292,
+   "ata": 0.34738566354312317,
+   "engine": "codegen"
+  },
+  {
+   "name": "attw",
+   "size": 3075,
+   "docs": 2,
+   "ajvSrc": 13191,
+   "ajv": 0.09845037189085952,
+   "ata": 0.04359551995780002,
+   "engine": "codegen"
+  },
+  {
+   "name": "ava",
+   "size": 5312,
+   "docs": 1,
+   "ajvSrc": 15547,
+   "ajv": 0.22013349843156677,
+   "ata": 0.07881396100313677,
+   "engine": "codegen"
+  },
+  {
+   "name": "avro-avsc",
+   "size": 3981,
+   "docs": 1,
+   "ajvSrc": 962,
+   "ajv": 18.61493718008376,
+   "ata": 2.960596921027311,
+   "engine": "codegen"
+  },
+  {
+   "name": "aws-cdk-appconfig-featureflags-1.0.0",
+   "size": 3865,
+   "docs": 1,
+   "ajvSrc": 455,
+   "ajv": 1.1082712160252681,
+   "ata": 0.36489187488027147,
+   "engine": "codegen"
+  },
+  {
+   "name": "azure-containerapp-template",
+   "size": 24024,
+   "docs": 2,
+   "ajvSrc": 158993,
+   "ajv": 0.23278620063549704,
+   "ata": 0.05985719972106749,
+   "engine": "codegen"
+  },
+  {
+   "name": "azure-devops-extension-manifest-1.0",
+   "size": 15361,
+   "docs": 1,
+   "ajvSrc": 35611,
+   "ajv": 0.17033958616343098,
+   "ata": 0.069834251356084,
+   "engine": "codegen"
+  },
+  {
+   "name": "azure-iot-edge-deployment-1.0",
+   "size": 3743,
+   "docs": 1,
+   "ajvSrc": 45114,
+   "ajv": 0.5725095106556556,
+   "ata": 0.3056287772862371,
+   "engine": "codegen"
+  },
+  {
+   "name": "azure-iot-edge-deployment-2.0",
+   "size": 4983,
+   "docs": 1,
+   "ajvSrc": 66547,
+   "ajv": 1.105816714123794,
+   "ata": 0.4623032880670327,
+   "engine": "codegen"
+  },
+  {
+   "name": "azure-iot-edgeagent-deployment-1.0",
+   "size": 2916,
+   "docs": 1,
+   "ajvSrc": 35688,
+   "ajv": 0.3993851130747341,
+   "ata": 0.13871972894334375,
+   "engine": "codegen"
+  },
+  {
+   "name": "azure-iot-edgeagent-deployment-1.1",
+   "size": 3661,
+   "docs": 1,
+   "ajvSrc": 45951,
+   "ajv": 0.7317441141498215,
+   "ata": 0.28227492643270974,
+   "engine": "codegen"
+  },
+  {
+   "name": "azure-iot-edgehub-deployment-1.0",
+   "size": 823,
+   "docs": 1,
+   "ajvSrc": 6358,
+   "ajv": 0.2019779895173751,
+   "ata": 0.1899018315783477,
+   "engine": "codegen"
+  },
+  {
+   "name": "azure-iot-edgehub-deployment-1.1",
+   "size": 1248,
+   "docs": 1,
+   "ajvSrc": 15429,
+   "ajv": 0.43426119289560533,
+   "ata": 0.2395162779557498,
+   "engine": "codegen"
+  },
+  {
+   "name": "azure-iot-edgehub-deployment-1.2",
+   "size": 2499,
+   "docs": 1,
+   "ajvSrc": 36660,
+   "ajv": 0.6728448275862069,
+   "ata": 0.4809966931614579,
+   "engine": "codegen"
+  },
+  {
+   "name": "babelrc",
+   "size": 4676,
+   "docs": 4,
+   "ajvSrc": 48842,
+   "ajv": 0.03952535533035051,
+   "ata": 0.01881884081153355,
+   "engine": "codegen"
+  },
+  {
+   "name": "bamboo-spec",
+   "size": 16460,
+   "docs": 4,
+   "ajvSrc": 72357,
+   "ajv": 1.1338706916099772,
+   "ata": 0.3470165521549032,
+   "engine": "codegen"
+  },
+  {
+   "name": "band-manifest",
+   "size": 6527,
+   "docs": 2,
+   "ajvSrc": 22190,
+   "ajv": 0.7199145669858181,
+   "ata": 0.5308416540595058,
+   "engine": "codegen"
+  },
+  {
+   "name": "bettercodehub",
+   "size": 1544,
+   "docs": 4,
+   "ajvSrc": 7005,
+   "ajv": 0.04909505100938691,
+   "ata": 0.023688242177599118,
+   "engine": "codegen"
+  },
+  {
+   "name": "bigquery-table",
+   "size": 1304,
+   "docs": 1,
+   "ajvSrc": 789,
+   "ajv": 0.22516005268668313,
+   "ata": 0.1188327317451405,
+   "engine": "codegen"
+  },
+  {
+   "name": "bitrise-step",
+   "size": 8553,
+   "docs": 2,
+   "ajvSrc": 431,
+   "ajv": 0.4149313513962076,
+   "ata": 0.08676747475098046,
+   "engine": "codegen"
+  },
+  {
+   "name": "bootstraprc",
+   "size": 2466,
+   "docs": 3,
+   "ajvSrc": 13768,
+   "ajv": 0.08366266345405718,
+   "ata": 0.04887398449976113,
+   "engine": "codegen"
+  },
+  {
+   "name": "bower",
+   "size": 3027,
+   "docs": 4,
+   "ajvSrc": 23522,
+   "ajv": 0.5414140273942937,
+   "ata": 0.06357049273077485,
+   "engine": "codegen"
+  },
+  {
+   "name": "bowerrc",
+   "size": 3353,
+   "docs": 2,
+   "ajvSrc": 17928,
+   "ajv": 0.022121773438027115,
+   "ata": 0.01988299883884616,
+   "engine": "codegen"
+  },
+  {
+   "name": "boyka-config",
+   "size": 19642,
+   "docs": 5,
+   "ajvSrc": 117149,
+   "ajv": 2.392404306220096,
+   "ata": 0.7050556799153961,
+   "engine": "codegen"
+  },
+  {
+   "name": "bpkg",
+   "size": 2510,
+   "docs": 1,
+   "ajvSrc": 7550,
+   "ajv": 0.03878850883011198,
+   "ata": 0.03517241743158391,
+   "engine": "codegen"
+  },
+  {
+   "name": "browser.i18n",
+   "size": 1209,
+   "docs": 1,
+   "ajvSrc": 1173,
+   "ajv": 0.2500007812451172,
+   "ata": 0.08290826108314144,
+   "engine": "codegen"
+  },
+  {
+   "name": "bukkit-plugin",
+   "size": 4292,
+   "docs": 1,
+   "ajvSrc": 20985,
+   "ajv": 0.842192858345966,
+   "ata": 0.2876438782701241,
+   "engine": "codegen"
+  },
+  {
+   "name": "bun-lock",
+   "size": 5328,
+   "docs": 2,
+   "ajvSrc": 5877,
+   "ajv": 23.427961358313816,
+   "ata": 11.847271758436946,
+   "engine": "codegen"
+  },
+  {
+   "name": "bundleconfig",
+   "size": 5567,
+   "docs": 1,
+   "ajvSrc": 792,
+   "ajv": 0.2962586154541213,
+   "ata": 0.13491226437049103,
+   "engine": "codegen"
+  },
+  {
+   "name": "bungee-plugin",
+   "size": 952,
+   "docs": 1,
+   "ajvSrc": 5364,
+   "ajv": 0.08631085242045983,
+   "ata": 0.08307873130995923,
+   "engine": "codegen"
+  },
+  {
+   "name": "cargo-make",
+   "size": 33335,
+   "docs": 1,
+   "ajvSrc": 57736,
+   "ajv": 0.39512295033387335,
+   "ata": 0.1339945297530517,
+   "engine": "codegen"
+  },
+  {
+   "name": "catalog-info",
+   "size": 33142,
+   "docs": 48,
+   "ajvSrc": 111264,
+   "ajv": 1.7758606826241135,
+   "ata": 0.24175296669566898,
+   "engine": "codegen"
+  },
+  {
+   "name": "cdk",
+   "size": 461,
+   "docs": 2,
+   "ajvSrc": 4125,
+   "ajv": 0.06714280103130162,
+   "ata": 0.02196587293480899,
+   "engine": "codegen"
+  },
+  {
+   "name": "changepacks",
+   "size": 740,
+   "docs": 1,
+   "ajvSrc": 4969,
+   "ajv": 0.03549994098190141,
+   "ata": 0.02960547253739518,
+   "engine": "codegen"
+  },
+  {
+   "name": "chart-lock",
+   "size": 1143,
+   "docs": 1,
+   "ajvSrc": 5451,
+   "ajv": 0.4105171490147783,
+   "ata": 0.0900853003506512,
+   "engine": "codegen"
+  },
+  {
+   "name": "chart",
+   "size": 10074,
+   "docs": 3,
+   "ajvSrc": 32253,
+   "ajv": 0.3152471707332451,
+   "ata": 0.11842890683056954,
+   "engine": "codegen"
+  },
+  {
+   "name": "chezmoi",
+   "size": 18489,
+   "docs": 1,
+   "ajvSrc": 52957,
+   "ajv": 0.16548450673925813,
+   "ata": 0.05608878500086236,
+   "engine": "codegen"
+  },
+  {
+   "name": "chrome-extension-locales-messages",
+   "size": 2600,
+   "docs": 1,
+   "ajvSrc": 5406,
+   "ajv": 0.2582338089089735,
+   "ata": 0.17504179083577295,
+   "engine": "codegen"
+  },
+  {
+   "name": "chrome-manifest",
+   "size": 23948,
+   "docs": 8,
+   "ajvSrc": 122001,
+   "ajv": 0.578271365791604,
+   "ata": 0.37562952599158655,
+   "engine": "codegen"
+  },
+  {
+   "name": "chutzpah",
+   "size": 14044,
+   "docs": 2,
+   "ajvSrc": 22346,
+   "ajv": 0.0936078348778433,
+   "ata": 0.06752659504428006,
+   "engine": "codegen"
+  },
+  {
+   "name": "clasp",
+   "size": 1316,
+   "docs": 1,
+   "ajvSrc": 5265,
+   "ajv": 0.6315688955553801,
+   "ata": 0.11531530591358947,
+   "engine": "codegen"
+  },
+  {
+   "name": "claude-code-keybindings",
+   "size": 4449,
+   "docs": 7,
+   "ajvSrc": 2507,
+   "ajv": 3.063281503598224,
+   "ata": 0.4061448776525535,
+   "engine": "codegen"
+  },
+  {
+   "name": "claude-code-launch",
+   "size": 3206,
+   "docs": 1,
+   "ajvSrc": 13876,
+   "ajv": 0.2780975840372649,
+   "ata": 0.08849533522859261,
+   "engine": "codegen"
+  },
+  {
+   "name": "claude-code-marketplace",
+   "size": 38746,
+   "docs": 1,
+   "ajvSrc": 347454,
+   "ajv": 0.1269173554505678,
+   "ata": 0.050828811084666206,
+   "engine": "codegen"
+  },
+  {
+   "name": "claude-code-plugin-manifest",
+   "size": 34638,
+   "docs": 2,
+   "ajvSrc": 296507,
+   "ajv": 0.11274491245476172,
+   "ata": 0.03398871248967606,
+   "engine": "codegen"
+  },
+  {
+   "name": "claude-code-settings",
+   "size": 179819,
+   "docs": 22,
+   "ajvSrc": 567561,
+   "ajv": 18.96225899621212,
+   "ata": 18.680581632653062,
+   "engine": "codegen"
+  },
+  {
+   "name": "clib",
+   "size": 2411,
+   "docs": 2,
+   "ajvSrc": 6597,
+   "ajv": 0.03577753449358428,
+   "ata": 0.027604198554935233,
+   "engine": "codegen"
+  },
+  {
+   "name": "cloud-sdk-pipeline-config-schema",
+   "size": 32888,
+   "docs": 2,
+   "ajvSrc": 102900,
+   "ajv": 0.05925074803289567,
+   "ata": 0.03617083470479511,
+   "engine": "codegen"
+  },
+  {
+   "name": "cloudbuild",
+   "size": 25906,
+   "docs": 2,
+   "ajvSrc": 8684,
+   "ajv": 0.09503704750862454,
+   "ata": 0.05237839341926765,
+   "engine": "codegen"
+  },
+  {
+   "name": "cloudify",
+   "size": 284479,
+   "docs": 56,
+   "ajvSrc": 9391,
+   "ajv": 11.424048185941043,
+   "ata": 8.677208691910499,
+   "engine": "codegen"
+  },
+  {
+   "name": "codeclimate",
+   "size": 3334,
+   "docs": 2,
+   "ajvSrc": 33929,
+   "ajv": 0.05899736726440335,
+   "ata": 0.03918238115202119,
+   "engine": "codegen"
+  },
+  {
+   "name": "codecov",
+   "size": 7930,
+   "docs": 5,
+   "ajvSrc": 127867,
+   "ajv": 0.16187585439388116,
+   "ata": 0.10564920829866752,
+   "engine": "codegen"
+  },
+  {
+   "name": "codex-hooks",
+   "size": 3948,
+   "docs": 1,
+   "ajvSrc": 5926,
+   "ajv": 1.1461616332378224,
+   "ata": 0.37354283046178266,
+   "engine": "codegen"
+  },
+  {
+   "name": "codex-plugin-manifest",
+   "size": 3671,
+   "docs": 2,
+   "ajvSrc": 17020,
+   "ajv": 0.9938343850931677,
+   "ata": 0.19906646760226934,
+   "engine": "codegen"
+  },
+  {
+   "name": "coffeelint",
+   "size": 9204,
+   "docs": 2,
+   "ajvSrc": 61635,
+   "ajv": 0.0487102894329219,
+   "ata": 0.0380604140579506,
+   "engine": "codegen"
+  },
+  {
+   "name": "commitlintrc",
+   "size": 1641,
+   "docs": 5,
+   "ajvSrc": 12140,
+   "ajv": 0.021235882502840277,
+   "ata": 0.017333608068727184,
+   "engine": "codegen"
+  },
+  {
+   "name": "compile-commands",
+   "size": 1753,
+   "docs": 1,
+   "ajvSrc": 5049,
+   "ajv": 0.04738123412743537,
+   "ata": 0.036439942133973696,
+   "engine": "codegen"
+  },
+  {
+   "name": "compilerdefaults",
+   "size": 7908,
+   "docs": 1,
+   "ajvSrc": 27567,
+   "ajv": 0.10025701037645997,
+   "ata": 0.052360938140186955,
+   "engine": "codegen"
+  },
+  {
+   "name": "component-detection-manifest",
+   "size": 12069,
+   "docs": 1,
+   "ajvSrc": 447,
+   "ajv": 13.08922145894668,
+   "ata": 3.228926144160142,
+   "engine": "codegen"
+  },
+  {
+   "name": "component",
+   "size": 5144,
+   "docs": 1,
+   "ajvSrc": 51405,
+   "ajv": 0.05317843169318268,
+   "ata": 0.04043754688179217,
+   "engine": "codegen"
+  },
+  {
+   "name": "container-structure-test",
+   "size": 6716,
+   "docs": 2,
+   "ajvSrc": 43067,
+   "ajv": 0.07533744608720218,
+   "ata": 0.06299509589308606,
+   "engine": "codegen"
+  },
+  {
+   "name": "content-security-policy-report-2",
+   "size": 2167,
+   "docs": 1,
+   "ajvSrc": 5443,
+   "ajv": 0.03670249419416049,
+   "ata": 0.032725475068661705,
+   "engine": "codegen"
+  },
+  {
+   "name": "crowdin",
+   "size": 3878,
+   "docs": 4,
+   "ajvSrc": 22968,
+   "ajv": 7.023327773876405,
+   "ata": 7.685075844854071,
+   "engine": "codegen"
+  },
+  {
+   "name": "crucible-code-schema",
+   "size": 20683,
+   "docs": 2,
+   "ajvSrc": 125580,
+   "ajv": 0.5008336421685239,
+   "ata": 0.35848710365471137,
+   "engine": "codegen"
+  },
+  {
+   "name": "cryproj",
+   "size": 67450,
+   "docs": 6,
+   "ajvSrc": 26634,
+   "ajv": 14.73180353200883,
+   "ata": 0.07010591689012742,
+   "engine": "codegen"
+  },
+  {
+   "name": "csscomb",
+   "size": 5440,
+   "docs": 1,
+   "ajvSrc": 13819,
+   "ajv": 0.2277722929573615,
+   "ata": 0.17481095266605776,
+   "engine": "codegen"
+  },
+  {
+   "name": "csslintrc",
+   "size": 1839,
+   "docs": 1,
+   "ajvSrc": 14754,
+   "ajv": 0.060212657511398926,
+   "ata": 0.058376579632140366,
+   "engine": "codegen"
+  },
+  {
+   "name": "dart-build",
+   "size": 4811,
+   "docs": 1,
+   "ajvSrc": 424,
+   "ajv": 1.7838755351409203,
+   "ata": 1.7343840183836283,
+   "engine": "codegen"
+  },
+  {
+   "name": "dart-test",
+   "size": 7466,
+   "docs": 1,
+   "ajvSrc": 423,
+   "ajv": 1.401293841518952,
+   "ata": 1.027807389896706,
+   "engine": "codegen"
+  },
+  {
+   "name": "datalogic-scan2deploy-android",
+   "size": 17141,
+   "docs": 1,
+   "ajvSrc": 36500,
+   "ajv": 0.0761447653711364,
+   "ata": 0.057007242679648955,
+   "engine": "codegen"
+  },
+  {
+   "name": "datalogic-scan2deploy-ce",
+   "size": 9234,
+   "docs": 3,
+   "ajvSrc": 24195,
+   "ajv": 0.1688794810414635,
+   "ata": 0.039759284436493736,
+   "engine": "codegen"
+  },
+  {
+   "name": "debugsettings",
+   "size": 1591,
+   "docs": 3,
+   "ajvSrc": 1157,
+   "ajv": 0.1582996952788001,
+   "ata": 0.0440483417520375,
+   "engine": "codegen"
+  },
+  {
+   "name": "dein",
+   "size": 17067,
+   "docs": 1,
+   "ajvSrc": 4582,
+   "ajv": 0.14381995405009906,
+   "ata": 0.09874754491727519,
+   "engine": "codegen"
+  },
+  {
+   "name": "dependabot-2.0",
+   "size": 32752,
+   "docs": 32,
+   "ajvSrc": 24284,
+   "ajv": 0.7000382138857784,
+   "ata": 0.6451822916666666,
+   "engine": "codegen"
+  },
+  {
+   "name": "dependabot",
+   "size": 5003,
+   "docs": 2,
+   "ajvSrc": 23282,
+   "ajv": 0.05257999190274886,
+   "ata": 0.04986485725042198,
+   "engine": "codegen"
+  },
+  {
+   "name": "deployed",
+   "size": 3219,
+   "docs": 1,
+   "ajvSrc": 23847,
+   "ajv": 0.22168172245621812,
+   "ata": 0.04964958940088276,
+   "engine": "codegen"
+  },
+  {
+   "name": "detekt-1.14.1",
+   "size": 26590,
+   "docs": 1,
+   "ajvSrc": 313405,
+   "ajv": 0.673433162732752,
+   "ata": 0.2612180681899811,
+   "engine": "codegen"
+  },
+  {
+   "name": "detekt-1.22.0",
+   "size": 33407,
+   "docs": 2,
+   "ajvSrc": 1225394,
+   "ajv": 0.7662447705156693,
+   "ata": 1.0746881414217397,
+   "engine": "codegen"
+  },
+  {
+   "name": "devinit.schema-1.0",
+   "size": 1956,
+   "docs": 1,
+   "ajvSrc": 17219,
+   "ajv": 1.9021549764610775,
+   "ata": 0.972405557176196,
+   "engine": "codegen"
+  },
+  {
+   "name": "devinit.schema-2.0",
+   "size": 1934,
+   "docs": 1,
+   "ajvSrc": 10143,
+   "ajv": 1.0101720036365474,
+   "ata": 1.1003796214788732,
+   "engine": "codegen"
+  },
+  {
+   "name": "devinit.schema-3.0",
+   "size": 2005,
+   "docs": 1,
+   "ajvSrc": 17870,
+   "ajv": 2.1403610680079193,
+   "ata": 1.1702467673044294,
+   "engine": "codegen"
+  },
+  {
+   "name": "devinit.schema-4.0",
+   "size": 2039,
+   "docs": 1,
+   "ajvSrc": 18006,
+   "ajv": 2.272833806818182,
+   "ata": 1.2422810646293363,
+   "engine": "codegen"
+  },
+  {
+   "name": "devinit.schema-5.0",
+   "size": 2005,
+   "docs": 1,
+   "ajvSrc": 17870,
+   "ajv": 2.1453238228038187,
+   "ata": 1.1531557599169742,
+   "engine": "codegen"
+  },
+  {
+   "name": "devinit.schema-6.0",
+   "size": 2039,
+   "docs": 1,
+   "ajvSrc": 18006,
+   "ajv": 2.147803167785235,
+   "ata": 1.2441411109728788,
+   "engine": "codegen"
+  },
+  {
+   "name": "devup",
+   "size": 3192,
+   "docs": 1,
+   "ajvSrc": 1581,
+   "ajv": 10.764341227125943,
+   "ata": 0.7987815364338918,
+   "engine": "codegen"
+  },
+  {
+   "name": "docfx",
+   "size": 10623,
+   "docs": 3,
+   "ajvSrc": 1153,
+   "ajv": 0.6344099184825704,
+   "ata": 0.27519641837457776,
+   "engine": "codegen"
+  },
+  {
+   "name": "docker-bake",
+   "size": 8481,
+   "docs": 3,
+   "ajvSrc": 11530,
+   "ajv": 0.5394381961863149,
+   "ata": 0.33156743091129126,
+   "engine": "codegen"
+  },
+  {
+   "name": "docker-extension-metadata",
+   "size": 2710,
+   "docs": 1,
+   "ajvSrc": 9186,
+   "ajv": 0.04480197529647368,
+   "ata": 0.04032589365824742,
+   "engine": "codegen"
+  },
+  {
+   "name": "dockerd",
+   "size": 5887,
+   "docs": 1,
+   "ajvSrc": 39924,
+   "ajv": 0.06878514153255136,
+   "ata": 0.06251422735321376,
+   "engine": "codegen"
+  },
+  {
+   "name": "docs-mcp-manifest",
+   "size": 3649,
+   "docs": 1,
+   "ajvSrc": 15962,
+   "ajv": 0.09044771057094404,
+   "ata": 0.059331118833924404,
+   "engine": "codegen"
+  },
+  {
+   "name": "dotnet-releases-index",
+   "size": 4528,
+   "docs": 1,
+   "ajvSrc": 1786,
+   "ajv": 3.945519775125752,
+   "ata": 1.7219017691877234,
+   "engine": "codegen"
+  },
+  {
+   "name": "dotnet-tools",
+   "size": 2377,
+   "docs": 1,
+   "ajvSrc": 8219,
+   "ajv": 0.04607012439865155,
+   "ata": 0.043721987097789655,
+   "engine": "codegen"
+  },
+  {
+   "name": "dotnetcli.host",
+   "size": 555,
+   "docs": 1,
+   "ajvSrc": 4991,
+   "ajv": 0.37716711140445996,
+   "ata": 0.4921034016116134,
+   "engine": "codegen"
+  },
+  {
+   "name": "dtool-dataset-metadata-1.0",
+   "size": 1101,
+   "docs": 1,
+   "ajvSrc": 12885,
+   "ajv": 0.08976469202183046,
+   "ata": 0.06815988712887483,
+   "engine": "codegen"
+  },
+  {
+   "name": "easyvcr-net",
+   "size": 2138,
+   "docs": 1,
+   "ajvSrc": 8745,
+   "ajv": 0.3001215477074752,
+   "ata": 0.05847154371716498,
+   "engine": "codegen"
+  },
+  {
+   "name": "elgato-stream-deck-plugin",
+   "size": 11276,
+   "docs": 6,
+   "ajvSrc": 38748,
+   "ajv": 0.683699107783817,
+   "ata": 0.635180465574187,
+   "engine": "codegen"
+  },
+  {
+   "name": "elm",
+   "size": 2401,
+   "docs": 1,
+   "ajvSrc": 1170,
+   "ajv": 0.19635210928832997,
+   "ata": 0.09919236033962864,
+   "engine": "codegen"
+  },
+  {
+   "name": "embrace-config-schema-1.0.0",
+   "size": 6076,
+   "docs": 1,
+   "ajvSrc": 34798,
+   "ajv": 0.15012870439873893,
+   "ata": 0.09566675515758559,
+   "engine": "codegen"
+  },
+  {
+   "name": "emmet",
+   "size": 1219,
+   "docs": 1,
+   "ajvSrc": 2030,
+   "ajv": 0.3113402683727953,
+   "ata": 0.13673260341214796,
+   "engine": "codegen"
+  },
+  {
+   "name": "epr-manifest",
+   "size": 1142,
+   "docs": 1,
+   "ajvSrc": 6966,
+   "ajv": 0.1925913739311301,
+   "ata": 0.09820629106229192,
+   "engine": "codegen"
+  },
+  {
+   "name": "es6importsorterrc",
+   "size": 1790,
+   "docs": 1,
+   "ajvSrc": 9298,
+   "ajv": 0.22698023594300595,
+   "ata": 0.06458430774198758,
+   "engine": "codegen"
+  },
+  {
+   "name": "eslint-suppressions",
+   "size": 833,
+   "docs": 1,
+   "ajvSrc": 1503,
+   "ajv": 0.33149461331918983,
+   "ata": 0.07085667216982804,
+   "engine": "codegen"
+  },
+  {
+   "name": "esmrc",
+   "size": 3112,
+   "docs": 2,
+   "ajvSrc": 11129,
+   "ajv": 0.06003893330051242,
+   "ata": 0.03745177370305454,
+   "engine": "codegen"
+  },
+  {
+   "name": "esquio",
+   "size": 1168,
+   "docs": 1,
+   "ajvSrc": 979,
+   "ajv": 0.1431529682489693,
+   "ata": 0.07618686480062167,
+   "engine": "codegen"
+  },
+  {
+   "name": "ethereum-erc1155",
+   "size": 1572,
+   "docs": 2,
+   "ajvSrc": 4242,
+   "ajv": 0.022377129021827542,
+   "ata": 0.01979281196590501,
+   "engine": "codegen"
+  },
+  {
+   "name": "ethereum-erc721",
+   "size": 620,
+   "docs": 1,
+   "ajvSrc": 1462,
+   "ajv": 0.030436916474536033,
+   "ata": 0.028474132862184774,
+   "engine": "codegen"
+  },
+  {
+   "name": "evidence-bundle",
+   "size": 21331,
+   "docs": 1,
+   "ajvSrc": 23984,
+   "ajv": 23.747329376854598,
+   "ata": 2.294704623680587,
+   "engine": "codegen"
+  },
+  {
+   "name": "evolving-resolutive-process-notation-1.0",
+   "size": 4583,
+   "docs": 1,
+   "ajvSrc": 2612,
+   "ajv": 0.3695424226746979,
+   "ata": 0.11517308030071378,
+   "engine": "codegen"
+  },
+  {
+   "name": "expo-40.0.0",
+   "size": 68555,
+   "docs": 1,
+   "ajvSrc": 127286,
+   "ajv": 0.4177292445539798,
+   "ata": 0.24693064429505343,
+   "engine": "codegen"
+  },
+  {
+   "name": "expo-42.0.0",
+   "size": 68948,
+   "docs": 1,
+   "ajvSrc": 132347,
+   "ajv": 0.4338271748207759,
+   "ata": 0.23982834393567845,
+   "engine": "codegen"
+  },
+  {
+   "name": "expo-46.0.0",
+   "size": 69285,
+   "docs": 1,
+   "ajvSrc": 135537,
+   "ajv": 0.45337883665049644,
+   "ata": 0.24344679841031228,
+   "engine": "codegen"
+  },
+  {
+   "name": "expo-52.0.0",
+   "size": 78251,
+   "docs": 2,
+   "ajvSrc": 177031,
+   "ajv": 0.2721333083883258,
+   "ata": 0.12927690085128662,
+   "engine": "codegen"
+  },
+  {
+   "name": "expo-53.0.0",
+   "size": 54771,
+   "docs": 1,
+   "ajvSrc": 191396,
+   "ajv": 2.2975058870828784,
+   "ata": 0.4422436953421265,
+   "engine": "codegen"
+  },
+  {
+   "name": "expo-54.0.0",
+   "size": 56677,
+   "docs": 1,
+   "ajvSrc": 195390,
+   "ajv": 0.22773751302357625,
+   "ata": 0.1734830746277719,
+   "engine": "codegen"
+  },
+  {
+   "name": "expo-55.0.0",
+   "size": 53724,
+   "docs": 1,
+   "ajvSrc": 187054,
+   "ajv": 0.2139098225649472,
+   "ata": 0.16805114567316176,
+   "engine": "codegen"
+  },
+  {
+   "name": "expo-56.0.0",
+   "size": 44737,
+   "docs": 1,
+   "ajvSrc": 166281,
+   "ajv": 0.210211208391579,
+   "ata": 0.1666894140493147,
+   "engine": "codegen"
+  },
+  {
+   "name": "expo-57.0.0",
+   "size": 44737,
+   "docs": 1,
+   "ajvSrc": 166281,
+   "ajv": 0.2127088746257704,
+   "ata": 0.17015244633878665,
+   "engine": "codegen"
+  },
+  {
+   "name": "factorial-drupal-breakpoints-css-0.2.0",
+   "size": 2003,
+   "docs": 2,
+   "ajvSrc": 457,
+   "ajv": 0.04451766552034991,
+   "ata": 0.03518632116549469,
+   "engine": "codegen"
+  },
+  {
+   "name": "feed-1",
+   "size": 8924,
+   "docs": 3,
+   "ajvSrc": 11666,
+   "ajv": 1.0282715354361072,
+   "ata": 0.3430597780407897,
+   "engine": "codegen"
+  },
+  {
+   "name": "first-timers",
+   "size": 810,
+   "docs": 2,
+   "ajvSrc": 2239,
+   "ajv": 0.028722154965418994,
+   "ata": 0.022610174051849275,
+   "engine": "codegen"
+  },
+  {
+   "name": "flatpak-manifest",
+   "size": 42480,
+   "docs": 4,
+   "ajvSrc": 56384,
+   "ajv": 1.8278289617985743,
+   "ata": 1.4394942421189003,
+   "engine": "codegen"
+  },
+  {
+   "name": "fly",
+   "size": 21633,
+   "docs": 1,
+   "ajvSrc": 99504,
+   "ajv": 1.094069662491111,
+   "ata": 0.23248095990886794,
+   "engine": "codegen"
+  },
+  {
+   "name": "function",
+   "size": 14572,
+   "docs": 25,
+   "ajvSrc": 100254,
+   "ajv": 1.48,
+   "ata": 0.06875589016372309,
+   "engine": "codegen"
+  },
+  {
+   "name": "gaspar-1.0",
+   "size": 10262,
+   "docs": 1,
+   "ajvSrc": 40486,
+   "ajv": 0.43556154926663543,
+   "ata": 0.15393512600385575,
+   "engine": "codegen"
+  },
+  {
+   "name": "gaspar-3.0",
+   "size": 14715,
+   "docs": 1,
+   "ajvSrc": 55780,
+   "ajv": 0.9347697233127688,
+   "ata": 0.23833484799885954,
+   "engine": "codegen"
+  },
+  {
+   "name": "gcp-blueprint-metadata",
+   "size": 12801,
+   "docs": 2,
+   "ajvSrc": 482,
+   "ajv": 2.5405023498031247,
+   "ata": 1.462136303823379,
+   "engine": "codegen"
+  },
+  {
+   "name": "github-action",
+   "size": 22113,
+   "docs": 5,
+   "ajvSrc": 17951,
+   "ajv": 0.3279821908822565,
+   "ata": 0.0916513925007733,
+   "engine": "codegen"
+  },
+  {
+   "name": "github-funding",
+   "size": 2243,
+   "docs": 24,
+   "ajvSrc": 15203,
+   "ajv": 0.11464579034255055,
+   "ata": 0.08585616382492832,
+   "engine": "codegen"
+  },
+  {
+   "name": "github-issue-config",
+   "size": 1955,
+   "docs": 3,
+   "ajvSrc": 5269,
+   "ajv": 0.11715603198312978,
+   "ata": 0.032326625628443253,
+   "engine": "codegen"
+  },
+  {
+   "name": "github-issue-forms",
+   "size": 35609,
+   "docs": 2,
+   "ajvSrc": 12880,
+   "ajv": 2.781154407675195,
+   "ata": 0.9482263073057412,
+   "engine": "codegen"
+  },
+  {
+   "name": "github-prompt",
+   "size": 1891,
+   "docs": 3,
+   "ajvSrc": 11943,
+   "ajv": 0.15322420007890997,
+   "ata": 0.02456835842970191,
+   "engine": "codegen"
+  },
+  {
+   "name": "github-workflow-template-properties",
+   "size": 11121,
+   "docs": 2,
+   "ajvSrc": 6781,
+   "ajv": 0.39704055663636,
+   "ata": 0.037910735271817424,
+   "engine": "codegen"
+  },
+  {
+   "name": "glamour-style",
+   "size": 10169,
+   "docs": 1,
+   "ajvSrc": 15868,
+   "ajv": 1.699698648763491,
+   "ata": 0.8075421326765454,
+   "engine": "codegen"
+  },
+  {
+   "name": "global",
+   "size": 3030,
+   "docs": 5,
+   "ajvSrc": 8085,
+   "ajv": 0.04032267412559218,
+   "ata": 0.036595770492253224,
+   "engine": "codegen"
+  },
+  {
+   "name": "gollama",
+   "size": 1271,
+   "docs": 1,
+   "ajvSrc": 5051,
+   "ajv": 0.0712590475308235,
+   "ata": 0.03602886323268206,
+   "engine": "codegen"
+  },
+  {
+   "name": "gpc",
+   "size": 901,
+   "docs": 2,
+   "ajvSrc": 1765,
+   "ajv": 0.02099832224806161,
+   "ata": 0.018417527833285756,
+   "engine": "codegen"
+  },
+  {
+   "name": "grunt-task",
+   "size": 2272,
+   "docs": 1,
+   "ajvSrc": 9542,
+   "ajv": 0.1158968261786658,
+   "ata": 0.0657631969196775,
+   "engine": "codegen"
+  },
+  {
+   "name": "grunt-watch-task",
+   "size": 3438,
+   "docs": 1,
+   "ajvSrc": 1171,
+   "ajv": 0.23660320830942677,
+   "ata": 0.04957630046985597,
+   "engine": "codegen"
+  },
+  {
+   "name": "helmfile",
+   "size": 30111,
+   "docs": 4,
+   "ajvSrc": 50689,
+   "ajv": 1.219454944518961,
+   "ata": 0.9445402106157915,
+   "engine": "codegen"
+  },
+  {
+   "name": "hemtt-0.6.2",
+   "size": 8878,
+   "docs": 1,
+   "ajvSrc": 22558,
+   "ajv": 0.506722494584426,
+   "ata": 0.4026037300964229,
+   "engine": "codegen"
+  },
+  {
+   "name": "hias-hitf",
+   "size": 7002,
+   "docs": 1,
+   "ajvSrc": 26019,
+   "ajv": 0.04888407494288188,
+   "ata": 0.04535749955776898,
+   "engine": "codegen"
+  },
+  {
+   "name": "host-meta",
+   "size": 914,
+   "docs": 1,
+   "ajvSrc": 5424,
+   "ajv": 0.631230696397292,
+   "ata": 0.12822453735610997,
+   "engine": "codegen"
+  },
+  {
+   "name": "host",
+   "size": 49701,
+   "docs": 3,
+   "ajvSrc": 1506,
+   "ajv": 1.1568287037037037,
+   "ata": 0.3571439170729094,
+   "engine": "codegen"
+  },
+  {
+   "name": "htmlhint",
+   "size": 5450,
+   "docs": 1,
+   "ajvSrc": 25441,
+   "ajv": 0.03600699427855412,
+   "ata": 0.033204976528549666,
+   "engine": "codegen"
+  },
+  {
+   "name": "httpmockrc",
+   "size": 1235,
+   "docs": 1,
+   "ajvSrc": 5435,
+   "ajv": 0.14882704299555014,
+   "ata": 0.1411701900136934,
+   "engine": "codegen"
+  },
+  {
+   "name": "hugo",
+   "size": 112013,
+   "docs": 3,
+   "ajvSrc": 449874,
+   "ajv": 0.23701223551439526,
+   "ata": 0.05266784641657549,
+   "engine": "codegen"
+  },
+  {
+   "name": "huskyrc",
+   "size": 44454,
+   "docs": 1,
+   "ajvSrc": 9136,
+   "ajv": 0.1429427957849902,
+   "ata": 0.06842080280796342,
+   "engine": "codegen"
+  },
+  {
+   "name": "imageoptimizer",
+   "size": 921,
+   "docs": 1,
+   "ajvSrc": 4625,
+   "ajv": 0.049042601372434345,
+   "ata": 0.03281270154029904,
+   "engine": "codegen"
+  },
+  {
+   "name": "imgbotconfig",
+   "size": 1269,
+   "docs": 1,
+   "ajvSrc": 6391,
+   "ajv": 0.09932534105412667,
+   "ata": 0.08805567528656559,
+   "engine": "codegen"
+  },
+  {
+   "name": "importmap",
+   "size": 454,
+   "docs": 1,
+   "ajvSrc": 2907,
+   "ajv": 0.055908511247929664,
+   "ata": 0.051657529912377556,
+   "engine": "codegen"
+  },
+  {
+   "name": "intlayer",
+   "size": 7248,
+   "docs": 1,
+   "ajvSrc": 17339,
+   "ajv": 6.118786326093606,
+   "ata": 1.2812566944266495,
+   "engine": "codegen"
+  },
+  {
+   "name": "jasmine",
+   "size": 2637,
+   "docs": 1,
+   "ajvSrc": 13035,
+   "ajv": 0.03372826180442075,
+   "ata": 0.03166986925217055,
+   "engine": "codegen"
+  },
+  {
+   "name": "jdt",
+   "size": 1944,
+   "docs": 1,
+   "ajvSrc": 17583,
+   "ajv": 0.1067396170226392,
+   "ata": 0.05302900789063411,
+   "engine": "codegen"
+  },
+  {
+   "name": "jest",
+   "size": 13677,
+   "docs": 1,
+   "ajvSrc": 52595,
+   "ajv": 0.052841984630972935,
+   "ata": 0.048954488378240776,
+   "engine": "codegen"
+  },
+  {
+   "name": "jovo-language-model",
+   "size": 2334,
+   "docs": 1,
+   "ajvSrc": 30287,
+   "ajv": 0.12067014091050328,
+   "ata": 0.0816751750893313,
+   "engine": "codegen"
+  },
+  {
+   "name": "jsconfig",
+   "size": 56569,
+   "docs": 10,
+   "ajvSrc": 281609,
+   "ajv": 1.6635100623700623,
+   "ata": 0.5735507813620071,
+   "engine": "codegen"
+  },
+  {
+   "name": "jscpd",
+   "size": 12415,
+   "docs": 2,
+   "ajvSrc": 56266,
+   "ajv": 5.3676828548430375,
+   "ata": 0.24350849232342664,
+   "engine": "codegen"
+  },
+  {
+   "name": "jscsrc",
+   "size": 70849,
+   "docs": 1,
+   "ajvSrc": 575620,
+   "ajv": 1.3813979834950452,
+   "ata": 0.30264424117242056,
+   "engine": "codegen"
+  },
+  {
+   "name": "jshintrc",
+   "size": 9271,
+   "docs": 2,
+   "ajvSrc": 34187,
+   "ajv": 0.061210526154712494,
+   "ata": 0.043913696305143995,
+   "engine": "codegen"
+  },
+  {
+   "name": "jsinspectrc",
+   "size": 949,
+   "docs": 1,
+   "ajvSrc": 3224,
+   "ajv": 0.030283016868133904,
+   "ata": 0.028103660892817746,
+   "engine": "codegen"
+  },
+  {
+   "name": "json-patch",
+   "size": 1185,
+   "docs": 2,
+   "ajvSrc": 11111,
+   "ajv": 0.46407122140238527,
+   "ata": 0.2664030436230436,
+   "engine": "codegen"
+  },
+  {
+   "name": "jsone",
+   "size": 1346,
+   "docs": 2,
+   "ajvSrc": 9909,
+   "ajv": 0.35135584912952583,
+   "ata": 0.13334099818656994,
+   "engine": "codegen"
+  },
+  {
+   "name": "jsonld",
+   "size": 2519,
+   "docs": 5,
+   "ajvSrc": 5269,
+   "ajv": 0.031320666812828864,
+   "ata": 0.040457834822670284,
+   "engine": "codegen"
+  },
+  {
+   "name": "jsontron-0.1",
+   "size": 1771,
+   "docs": 5,
+   "ajvSrc": 14703,
+   "ajv": 0.07781676539535246,
+   "ata": 0.023209887288393752,
+   "engine": "codegen"
+  },
+  {
+   "name": "knowledge-unit",
+   "size": 5273,
+   "docs": 2,
+   "ajvSrc": 38715,
+   "ajv": 1.105706506716789,
+   "ata": 0.4263190838555655,
+   "engine": "codegen"
+  },
+  {
+   "name": "kustomization",
+   "size": 17953,
+   "docs": 14,
+   "ajvSrc": 432,
+   "ajv": 0.39230268886796893,
+   "ata": 0.22605084764918626,
+   "engine": "codegen"
+  },
+  {
+   "name": "label-commenter-config",
+   "size": 1231,
+   "docs": 4,
+   "ajvSrc": 2921,
+   "ajv": 0.39636181133571147,
+   "ata": 0.09332711547255743,
+   "engine": "codegen"
+  },
+  {
+   "name": "language-configuration",
+   "size": 3974,
+   "docs": 1,
+   "ajvSrc": 49932,
+   "ajv": 0.12022164015820921,
+   "ata": 0.08415338007990254,
+   "engine": "codegen"
+  },
+  {
+   "name": "launchsettings",
+   "size": 5327,
+   "docs": 2,
+   "ajvSrc": 1895,
+   "ajv": 0.26111772961681573,
+   "ata": 0.06851037923604711,
+   "engine": "codegen"
+  },
+  {
+   "name": "lego",
+   "size": 1358,
+   "docs": 2,
+   "ajvSrc": 6289,
+   "ajv": 0.31565619229494485,
+   "ata": 0.055601098949978736,
+   "engine": "codegen"
+  },
+  {
+   "name": "lgtm",
+   "size": 7644,
+   "docs": 6,
+   "ajvSrc": 47854,
+   "ajv": 0.07584918919328903,
+   "ata": 0.061166900626645745,
+   "engine": "codegen"
+  },
+  {
+   "name": "libman",
+   "size": 2745,
+   "docs": 7,
+   "ajvSrc": 17333,
+   "ajv": 0.31643930608402615,
+   "ata": 0.2465747141316073,
+   "engine": "codegen"
+  },
+  {
+   "name": "license-report-config",
+   "size": 1899,
+   "docs": 2,
+   "ajvSrc": 8729,
+   "ajv": 0.04370975151342964,
+   "ata": 0.039013946379734786,
+   "engine": "codegen"
+  },
+  {
+   "name": "linkinator-config",
+   "size": 2687,
+   "docs": 2,
+   "ajvSrc": 9067,
+   "ajv": 0.026764418875716445,
+   "ata": 0.02192906678537478,
+   "engine": "codegen"
+  },
+  {
+   "name": "linutil-tab-data",
+   "size": 3183,
+   "docs": 1,
+   "ajvSrc": 22504,
+   "ajv": 1.2777516131093083,
+   "ata": 0.33472835601077805,
+   "engine": "codegen"
+  },
+  {
+   "name": "linutil-tabs",
+   "size": 555,
+   "docs": 1,
+   "ajvSrc": 3015,
+   "ajv": 0.19639969658585443,
+   "ata": 0.14835895334174024,
+   "engine": "codegen"
+  },
+  {
+   "name": "liquibase-3.2",
+   "size": 76657,
+   "docs": 1,
+   "ajvSrc": 34498,
+   "ajv": 0.4040679630284358,
+   "ata": 0.13539360542651926,
+   "engine": "codegen"
+  },
+  {
+   "name": "liquibase",
+   "size": 76422,
+   "docs": 54,
+   "ajvSrc": 29654,
+   "ajv": 4.604665056360708,
+   "ata": 5.019102352352353,
+   "engine": "codegen"
+  },
+  {
+   "name": "litertlm_manifest",
+   "size": 10865,
+   "docs": 4,
+   "ajvSrc": 4619,
+   "ajv": 1.0844809694209498,
+   "ata": 0.5887274814553162,
+   "engine": "codegen"
+  },
+  {
+   "name": "loobin-1.0",
+   "size": 2765,
+   "docs": 1,
+   "ajvSrc": 14077,
+   "ajv": 0.16312587016185925,
+   "ata": 0.06621693412483735,
+   "engine": "codegen"
+  },
+  {
+   "name": "luaurc",
+   "size": 1792,
+   "docs": 1,
+   "ajvSrc": 17267,
+   "ajv": 0.11656477026684424,
+   "ata": 0.07304392080668783,
+   "engine": "codegen"
+  },
+  {
+   "name": "madge",
+   "size": 7021,
+   "docs": 2,
+   "ajvSrc": 20544,
+   "ajv": 0.44392612690591915,
+   "ata": 0.11805707126455779,
+   "engine": "codegen"
+  },
+  {
+   "name": "mail-servers-config",
+   "size": 1351,
+   "docs": 5,
+   "ajvSrc": 11486,
+   "ajv": 0.19430674956889224,
+   "ata": 0.15641243841401425,
+   "engine": "codegen"
+  },
+  {
+   "name": "markdown-link-check",
+   "size": 983,
+   "docs": 1,
+   "ajvSrc": 10796,
+   "ajv": 0.09606887127105393,
+   "ata": 0.06472433706788866,
+   "engine": "codegen"
+  },
+  {
+   "name": "mboats-config-0.1",
+   "size": 4931,
+   "docs": 1,
+   "ajvSrc": 436,
+   "ajv": 0.0460164092464217,
+   "ata": 0.03207720115926037,
+   "engine": "codegen"
+  },
+  {
+   "name": "mboats-config-0.2",
+   "size": 4816,
+   "docs": 1,
+   "ajvSrc": 436,
+   "ajv": 0.07323613524305778,
+   "ata": 0.04606786395422759,
+   "engine": "codegen"
+  },
+  {
+   "name": "micro",
+   "size": 12313,
+   "docs": 1,
+   "ajvSrc": 25530,
+   "ajv": 0.6613518178661772,
+   "ata": 0.3238100800608754,
+   "engine": "codegen"
+  },
+  {
+   "name": "mimetypes",
+   "size": 332,
+   "docs": 1,
+   "ajvSrc": 1561,
+   "ajv": 0.1043220083926443,
+   "ata": 0.07575479237764807,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-biome",
+   "size": 16662,
+   "docs": 1,
+   "ajvSrc": 110825,
+   "ajv": 0.11257096703383296,
+   "ata": 0.0755105883729886,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-configured-carver",
+   "size": 4497,
+   "docs": 1,
+   "ajvSrc": 20556,
+   "ajv": 0.052743875504523405,
+   "ata": 0.03928564581694397,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-custom-main-menu-mod",
+   "size": 17760,
+   "docs": 2,
+   "ajvSrc": 11883,
+   "ajv": 2.049704908792785,
+   "ata": 0.4048175727644416,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-damage-type",
+   "size": 704,
+   "docs": 1,
+   "ajvSrc": 3784,
+   "ajv": 0.0317384621732255,
+   "ata": 0.030359755940210058,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-dimension-type",
+   "size": 3149,
+   "docs": 1,
+   "ajvSrc": 10289,
+   "ajv": 0.039119532880466136,
+   "ata": 0.033330687173778274,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-dimension",
+   "size": 11327,
+   "docs": 1,
+   "ajvSrc": 57488,
+   "ajv": 0.08235342729732066,
+   "ata": 0.0463471217728424,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-item-modifier",
+   "size": 16261,
+   "docs": 1,
+   "ajvSrc": 76727,
+   "ajv": 0.17445490387634766,
+   "ata": 0.07932333606334689,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-lang",
+   "size": 277,
+   "docs": 1,
+   "ajvSrc": 819,
+   "ajv": 0.03402559801428889,
+   "ata": 0.030414137958039746,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-loot-table",
+   "size": 8143,
+   "docs": 1,
+   "ajvSrc": 24262,
+   "ajv": 0.5274786834227843,
+   "ata": 0.40332800274259906,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-particle",
+   "size": 337,
+   "docs": 1,
+   "ajvSrc": 1419,
+   "ajv": 0.031002621227915847,
+   "ata": 0.028480475789380746,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-predicate",
+   "size": 22103,
+   "docs": 1,
+   "ajvSrc": 35249,
+   "ajv": 0.0781655287234583,
+   "ata": 0.09872664963656781,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-recipe",
+   "size": 6272,
+   "docs": 1,
+   "ajvSrc": 50527,
+   "ajv": 0.08079333704978428,
+   "ata": 0.05132958417010464,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-tag",
+   "size": 920,
+   "docs": 1,
+   "ajvSrc": 7229,
+   "ajv": 0.12878087885412204,
+   "ata": 0.07735789487934215,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-template-pool",
+   "size": 2991,
+   "docs": 1,
+   "ajvSrc": 15666,
+   "ajv": 0.04663932201334566,
+   "ata": 0.049483378053562836,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-trim-material",
+   "size": 573,
+   "docs": 1,
+   "ajvSrc": 3569,
+   "ajv": 0.03244758733416345,
+   "ata": 0.03029874662834921,
+   "engine": "codegen"
+  },
+  {
+   "name": "minecraft-trim-pattern",
+   "size": 508,
+   "docs": 1,
+   "ajvSrc": 3058,
+   "ajv": 0.03159251217878648,
+   "ata": 0.02945610375342583,
+   "engine": "codegen"
+  },
+  {
+   "name": "mocharc",
+   "size": 2090,
+   "docs": 1,
+   "ajvSrc": 28171,
+   "ajv": 0.07164912535242046,
+   "ata": 0.04439730932346833,
+   "engine": "codegen"
+  },
+  {
+   "name": "modernizrrc",
+   "size": 5218,
+   "docs": 1,
+   "ajvSrc": 4827,
+   "ajv": 2.0749559082892417,
+   "ata": 0.08926294636680517,
+   "engine": "codegen"
+  },
+  {
+   "name": "mongodb-atlas-search-index-definition",
+   "size": 9198,
+   "docs": 1,
+   "ajvSrc": 15845,
+   "ajv": 2.0209648865760625,
+   "ata": 2.0781165774845443,
+   "engine": "codegen"
+  },
+  {
+   "name": "monika-config-schema",
+   "size": 24801,
+   "docs": 1,
+   "ajvSrc": 154197,
+   "ajv": 0.8264933468325137,
+   "ata": 0.4898684465127672,
+   "engine": "codegen"
+  },
+  {
+   "name": "mprocs-0.6.4",
+   "size": 3871,
+   "docs": 1,
+   "ajvSrc": 28759,
+   "ajv": 0.26556767271713294,
+   "ata": 0.0708425052378414,
+   "engine": "codegen"
+  },
+  {
+   "name": "mycode",
+   "size": 1303,
+   "docs": 1,
+   "ajvSrc": 5075,
+   "ajv": 0.12392995897982452,
+   "ata": 0.044804778140940485,
+   "engine": "codegen"
+  },
+  {
+   "name": "nest-cli",
+   "size": 14279,
+   "docs": 4,
+   "ajvSrc": 4480,
+   "ajv": 0.28424640430914416,
+   "ata": 0.05781561260594567,
+   "engine": "codegen"
+  },
+  {
+   "name": "netlify",
+   "size": 11255,
+   "docs": 1,
+   "ajvSrc": 9863,
+   "ajv": 2.871584063173008,
+   "ata": 3.1052308647725506,
+   "engine": "codegen"
+  },
+  {
+   "name": "nightwatch",
+   "size": 10212,
+   "docs": 6,
+   "ajvSrc": 47517,
+   "ajv": 0.052629965580396613,
+   "ata": 0.037122766622490984,
+   "engine": "codegen"
+  },
+  {
+   "name": "ninjs-1.1",
+   "size": 8790,
+   "docs": 1,
+   "ajvSrc": 37790,
+   "ajv": 0.5709882663621441,
+   "ata": 0.23721976835900205,
+   "engine": "codegen"
+  },
+  {
+   "name": "ninjs-1.2",
+   "size": 13104,
+   "docs": 1,
+   "ajvSrc": 44405,
+   "ajv": 0.4578492663049699,
+   "ata": 0.18218074912098522,
+   "engine": "codegen"
+  },
+  {
+   "name": "ninjs-1.3",
+   "size": 15980,
+   "docs": 8,
+   "ajvSrc": 53912,
+   "ajv": 0.6633715508092333,
+   "ata": 0.40603895655704425,
+   "engine": "codegen"
+  },
+  {
+   "name": "ninjs-1.4",
+   "size": 17515,
+   "docs": 9,
+   "ajvSrc": 59178,
+   "ajv": 0.5931671930839153,
+   "ata": 0.39566455977922194,
+   "engine": "codegen"
+  },
+  {
+   "name": "ninjs-2.0",
+   "size": 17772,
+   "docs": 9,
+   "ajvSrc": 66102,
+   "ajv": 0.5043254661674043,
+   "ata": 0.2896512943050577,
+   "engine": "codegen"
+  },
+  {
+   "name": "nodemon",
+   "size": 3839,
+   "docs": 2,
+   "ajvSrc": 24594,
+   "ajv": 0.07791833701491722,
+   "ata": 0.022677704214284822,
+   "engine": "codegen"
+  },
+  {
+   "name": "now",
+   "size": 4226,
+   "docs": 1,
+   "ajvSrc": 18660,
+   "ajv": 0.39702335460690213,
+   "ata": 0.5561300225231488,
+   "engine": "codegen"
+  },
+  {
+   "name": "npm-badges",
+   "size": 3729,
+   "docs": 1,
+   "ajvSrc": 22397,
+   "ajv": 0.06582909810233345,
+   "ata": 0.04612827189508717,
+   "engine": "codegen"
+  },
+  {
+   "name": "npmpackagejsonlintrc",
+   "size": 11589,
+   "docs": 1,
+   "ajvSrc": 4601,
+   "ajv": 0.3329161568999526,
+   "ata": 0.08190077026711604,
+   "engine": "codegen"
+  },
+  {
+   "name": "nuget-project",
+   "size": 2612,
+   "docs": 1,
+   "ajvSrc": 26878,
+   "ajv": 0.1103283980174152,
+   "ata": 0.0517831286620114,
+   "engine": "codegen"
+  },
+  {
+   "name": "nycrc",
+   "size": 1442,
+   "docs": 1,
+   "ajvSrc": 5567,
+   "ajv": 0.03767681574270043,
+   "ata": 0.03373756417490493,
+   "engine": "codegen"
+  },
+  {
+   "name": "ocelot",
+   "size": 6719,
+   "docs": 1,
+   "ajvSrc": 24584,
+   "ajv": 0.15668340423198354,
+   "ata": 0.15750385878424672,
+   "engine": "codegen"
+  },
+  {
+   "name": "odgs-data-rules",
+   "size": 2578,
+   "docs": 1,
+   "ajvSrc": 16240,
+   "ajv": 0.11782720784251348,
+   "ata": 0.06111642006319405,
+   "engine": "codegen"
+  },
+  {
+   "name": "odgs-ontology-graph",
+   "size": 1770,
+   "docs": 1,
+   "ajvSrc": 14867,
+   "ajv": 0.08437331254956885,
+   "ata": 0.07008412425032982,
+   "engine": "codegen"
+  },
+  {
+   "name": "odgs-standard-metrics",
+   "size": 1629,
+   "docs": 1,
+   "ajvSrc": 10588,
+   "ajv": 0.14286075565095338,
+   "ata": 0.04782614933767589,
+   "engine": "codegen"
+  },
+  {
+   "name": "okf-0.1",
+   "size": 4805,
+   "docs": 2,
+   "ajvSrc": 15403,
+   "ajv": 0.15377134894091415,
+   "ata": 0.04375891579550775,
+   "engine": "codegen"
+  },
+  {
+   "name": "okf-0.2",
+   "size": 8123,
+   "docs": 2,
+   "ajvSrc": 7769,
+   "ajv": 0.8111295928299133,
+   "ata": 0.1399935708086012,
+   "engine": "codegen"
+  },
+  {
+   "name": "omletrc",
+   "size": 1538,
+   "docs": 2,
+   "ajvSrc": 21120,
+   "ajv": 0.5426558455652929,
+   "ata": 0.047980554842517134,
+   "engine": "codegen"
+  },
+  {
+   "name": "openweather.current",
+   "size": 1897,
+   "docs": 1,
+   "ajvSrc": 20762,
+   "ajv": 0.131270003741164,
+   "ata": 0.059846803933390286,
+   "engine": "codegen"
+  },
+  {
+   "name": "openweather.roadrisk",
+   "size": 935,
+   "docs": 2,
+   "ajvSrc": 8989,
+   "ajv": 0.05083076598545748,
+   "ata": 0.04424711457413835,
+   "engine": "codegen"
+  },
+  {
+   "name": "package.manifest",
+   "size": 11223,
+   "docs": 5,
+   "ajvSrc": 35544,
+   "ajv": 0.5904790021403794,
+   "ata": 0.10858454063004737,
+   "engine": "codegen"
+  },
+  {
+   "name": "packer",
+   "size": 4083,
+   "docs": 3,
+   "ajvSrc": 38844,
+   "ajv": 0.03375518346556761,
+   "ata": 0.028072801613602774,
+   "engine": "codegen"
+  },
+  {
+   "name": "pactspec",
+   "size": 4999,
+   "docs": 2,
+   "ajvSrc": 32900,
+   "ajv": 0.606059907275537,
+   "ata": 0.2049760489474655,
+   "engine": "codegen"
+  },
+  {
+   "name": "partial-pixi",
+   "size": 74149,
+   "docs": 1,
+   "ajvSrc": 84378,
+   "ajv": 0.10007036087310026,
+   "ata": 0.08343710667553875,
+   "engine": "codegen"
+  },
+  {
+   "name": "pdm",
+   "size": 5285,
+   "docs": 1,
+   "ajvSrc": 21804,
+   "ajv": 0.08578183210166715,
+   "ata": 0.07895928511081808,
+   "engine": "codegen"
+  },
+  {
+   "name": "petstore-v1.0",
+   "size": 6558,
+   "docs": 1,
+   "ajvSrc": 432,
+   "ajv": 0.03342893186146817,
+   "ata": 0.02720360007943352,
+   "engine": "codegen"
+  },
+  {
+   "name": "plagiarize-me",
+   "size": 11540,
+   "docs": 1,
+   "ajvSrc": 134096,
+   "ajv": 7.319261434321259,
+   "ata": 1.656850184318436,
+   "engine": "codegen"
+  },
+  {
+   "name": "plagiarize",
+   "size": 1171,
+   "docs": 1,
+   "ajvSrc": 7531,
+   "ajv": 0.7572856061036329,
+   "ata": 0.049784911160120876,
+   "engine": "codegen"
+  },
+  {
+   "name": "pm2-ecosystem",
+   "size": 7662,
+   "docs": 2,
+   "ajvSrc": 54278,
+   "ajv": 0.060255267003088045,
+   "ata": 0.05469052554149725,
+   "engine": "codegen"
+  },
+  {
+   "name": "pocketmine-plugin",
+   "size": 4391,
+   "docs": 1,
+   "ajvSrc": 24577,
+   "ajv": 0.23520761473554228,
+   "ata": 0.16494318537945138,
+   "engine": "codegen"
+  },
+  {
+   "name": "popxf-1.0",
+   "size": 34012,
+   "docs": 11,
+   "ajvSrc": 158637,
+   "ajv": 2.758376938451995,
+   "ata": 3.696384608277901,
+   "engine": "codegen"
+  },
+  {
+   "name": "popxf-corr-1.0",
+   "size": 970,
+   "docs": 2,
+   "ajvSrc": 16157,
+   "ajv": 0.8639799127392112,
+   "ata": 0.9525693227281387,
+   "engine": "codegen"
+  },
+  {
+   "name": "postcssrc",
+   "size": 1214,
+   "docs": 6,
+   "ajvSrc": 12410,
+   "ajv": 0.09262845147784848,
+   "ata": 0.047096043940517814,
+   "engine": "codegen"
+  },
+  {
+   "name": "powerpages-web-template-manifest",
+   "size": 2653,
+   "docs": 4,
+   "ajvSrc": 6199,
+   "ajv": 0.0273146858304107,
+   "ata": 0.022777176846809296,
+   "engine": "codegen"
+  },
+  {
+   "name": "powerpages.config",
+   "size": 1230,
+   "docs": 1,
+   "ajvSrc": 3555,
+   "ajv": 0.03203198837892768,
+   "ata": 0.02994425991428518,
+   "engine": "codegen"
+  },
+  {
+   "name": "pre-commit-hooks",
+   "size": 6245,
+   "docs": 1,
+   "ajvSrc": 12708,
+   "ajv": 1.6983416974483079,
+   "ata": 0.17927394957983195,
+   "engine": "codegen"
+  },
+  {
+   "name": "prettierrc",
+   "size": 7817,
+   "docs": 1,
+   "ajvSrc": 39927,
+   "ajv": 0.5917828029529685,
+   "ata": 0.04925865283493792,
+   "engine": "codegen"
+  },
+  {
+   "name": "problem-object-rfc9457",
+   "size": 1015,
+   "docs": 1,
+   "ajvSrc": 3332,
+   "ajv": 0.18371400161666637,
+   "ata": 0.11388372271792915,
+   "engine": "codegen"
+  },
+  {
+   "name": "project",
+   "size": 21249,
+   "docs": 4,
+   "ajvSrc": 102115,
+   "ajv": 0.22196750493862782,
+   "ata": 0.0662659035186535,
+   "engine": "codegen"
+  },
+  {
+   "name": "prometheus",
+   "size": 37598,
+   "docs": 1,
+   "ajvSrc": 225954,
+   "ajv": 6.932632928942808,
+   "ata": 8.2553394552208,
+   "engine": "codegen"
+  },
+  {
+   "name": "prometheus.rules",
+   "size": 3626,
+   "docs": 1,
+   "ajvSrc": 13731,
+   "ajv": 0.5034771171080454,
+   "ata": 0.19560878771578072,
+   "engine": "codegen"
+  },
+  {
+   "name": "proxies",
+   "size": 7681,
+   "docs": 4,
+   "ajvSrc": 2542,
+   "ajv": 0.2676409244192271,
+   "ata": 0.10531846689345031,
+   "engine": "codegen"
+  },
+  {
+   "name": "pterodactyl",
+   "size": 2255,
+   "docs": 1,
+   "ajvSrc": 12125,
+   "ajv": 0.16936051671140542,
+   "ata": 0.11613881928697313,
+   "engine": "codegen"
+  },
+  {
+   "name": "publiccode",
+   "size": 24308,
+   "docs": 3,
+   "ajvSrc": 112052,
+   "ajv": 2.1713347446127123,
+   "ata": 0.4358234730121375,
+   "engine": "codegen"
+  },
+  {
+   "name": "pull-request-labeler-4",
+   "size": 571,
+   "docs": 3,
+   "ajvSrc": 5634,
+   "ajv": 0.8600137168902648,
+   "ata": 0.04610282688648311,
+   "engine": "codegen"
+  },
+  {
+   "name": "putout",
+   "size": 29971,
+   "docs": 1,
+   "ajvSrc": 9320,
+   "ajv": 0.10852057373691336,
+   "ata": 0.054368012297839316,
+   "engine": "codegen"
+  },
+  {
+   "name": "qfconfig",
+   "size": 1352,
+   "docs": 1,
+   "ajvSrc": 7053,
+   "ajv": 0.05638775441158642,
+   "ata": 0.05255727811677152,
+   "engine": "codegen"
+  },
+  {
+   "name": "qodana-1.0",
+   "size": 12609,
+   "docs": 1,
+   "ajvSrc": 50794,
+   "ajv": 0.08672178524351325,
+   "ata": 0.07446657395616915,
+   "engine": "codegen"
+  },
+  {
+   "name": "qwen-code-settings",
+   "size": 14186,
+   "docs": 1,
+   "ajvSrc": 90365,
+   "ajv": 0.25946334771186713,
+   "ata": 0.11019004002611477,
+   "engine": "codegen"
+  },
+  {
+   "name": "radiohound-v0",
+   "size": 5807,
+   "docs": 2,
+   "ajvSrc": 24723,
+   "ajv": 0.5853386841874213,
+   "ata": 0.14995229687277414,
+   "engine": "codegen"
+  },
+  {
+   "name": "rc3-auth-0.0.3",
+   "size": 803,
+   "docs": 1,
+   "ajvSrc": 3350,
+   "ajv": 0.034795540288157165,
+   "ata": 0.032140249311396585,
+   "engine": "codegen"
+  },
+  {
+   "name": "rc3-environment-0.0.3",
+   "size": 376,
+   "docs": 1,
+   "ajvSrc": 1147,
+   "ajv": 0.04274859252166256,
+   "ata": 0.03808418021970489,
+   "engine": "codegen"
+  },
+  {
+   "name": "rc3-settings-0.0.3",
+   "size": 1504,
+   "docs": 1,
+   "ajvSrc": 6919,
+   "ajv": 0.08610359435339093,
+   "ata": 0.0431916785532651,
+   "engine": "codegen"
+  },
+  {
+   "name": "remarkrc",
+   "size": 3420,
+   "docs": 18,
+   "ajvSrc": 9938,
+   "ajv": 0.10209527674410294,
+   "ata": 0.09889443925256751,
+   "engine": "codegen"
+  },
+  {
+   "name": "replit",
+   "size": 3233,
+   "docs": 1,
+   "ajvSrc": 17894,
+   "ajv": 0.037416690441558195,
+   "ata": 0.031079221167704566,
+   "engine": "codegen"
+  },
+  {
+   "name": "resjson",
+   "size": 361,
+   "docs": 1,
+   "ajvSrc": 624,
+   "ajv": 0.04629277652788193,
+   "ata": 0.03900626142141385,
+   "engine": "codegen"
+  },
+  {
+   "name": "revola",
+   "size": 7997,
+   "docs": 2,
+   "ajvSrc": 34817,
+   "ajv": 0.31531511114614535,
+   "ata": 0.16665885607626157,
+   "engine": "codegen"
+  },
+  {
+   "name": "roomodes",
+   "size": 3722,
+   "docs": 1,
+   "ajvSrc": 1974,
+   "ajv": 1.0493354407135362,
+   "ata": 0.3646146701183162,
+   "engine": "codegen"
+  },
+  {
+   "name": "rust-project",
+   "size": 3094,
+   "docs": 1,
+   "ajvSrc": 2536,
+   "ajv": 0.247622850351001,
+   "ata": 0.1430812801362121,
+   "engine": "codegen"
+  },
+  {
+   "name": "rust-toolchain",
+   "size": 15734,
+   "docs": 6,
+   "ajvSrc": 16427,
+   "ajv": 0.16594052419354838,
+   "ata": 0.1364465377268386,
+   "engine": "codegen"
+  },
+  {
+   "name": "rustfmt",
+   "size": 219097,
+   "docs": 1,
+   "ajvSrc": 39517,
+   "ajv": 0.030873317423465923,
+   "ata": 0.028028376392735945,
+   "engine": "codegen"
+  },
+  {
+   "name": "s3-bucket-cors",
+   "size": 1550,
+   "docs": 2,
+   "ajvSrc": 8862,
+   "ajv": 0.1413041366398191,
+   "ata": 0.07592069011331068,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-1.0.0",
+   "size": 31498,
+   "docs": 1,
+   "ajvSrc": 3084,
+   "ajv": 0.10898597359286365,
+   "ata": 0.08027070210046175,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.0.0-csd.2.beta.2018-10-10",
+   "size": 45399,
+   "docs": 1,
+   "ajvSrc": 4883,
+   "ajv": 0.15772724118215334,
+   "ata": 0.114826828953223,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.0.0-csd.2.beta.2019-01-09",
+   "size": 50720,
+   "docs": 1,
+   "ajvSrc": 5138,
+   "ajv": 0.1642059983825878,
+   "ata": 0.11328770529642836,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.0.0-csd.2.beta.2019-01-24",
+   "size": 54388,
+   "docs": 1,
+   "ajvSrc": 5138,
+   "ajv": 0.18504357721771955,
+   "ata": 0.12303254153043618,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.1.0-rtm.0",
+   "size": 80662,
+   "docs": 2,
+   "ajvSrc": 6651,
+   "ajv": 475.46608139534885,
+   "ata": 94.10103755868545,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.1.0-rtm.1",
+   "size": 80734,
+   "docs": 2,
+   "ajvSrc": 6651,
+   "ajv": 459.6931818181818,
+   "ata": 95.51041666666667,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.1.0-rtm.2",
+   "size": 80734,
+   "docs": 2,
+   "ajvSrc": 6651,
+   "ajv": 472.18072093023255,
+   "ata": 100.93393969849247,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.1.0-rtm.3",
+   "size": 80734,
+   "docs": 2,
+   "ajvSrc": 6651,
+   "ajv": 469.9486511627907,
+   "ata": 104.1884765625,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.1.0-rtm.4",
+   "size": 81599,
+   "docs": 2,
+   "ajvSrc": 6651,
+   "ajv": 473.78439534883717,
+   "ata": 101.39278282828283,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.1.0-rtm.5",
+   "size": 81541,
+   "docs": 2,
+   "ajvSrc": 6651,
+   "ajv": 472.0775232558139,
+   "ata": 106.63176063829788,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.1.0-rtm.6",
+   "size": 80127,
+   "docs": 2,
+   "ajvSrc": 6651,
+   "ajv": 449.0087888888889,
+   "ata": 101.32881060606061,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif-2.1.0",
+   "size": 81572,
+   "docs": 2,
+   "ajvSrc": 6694,
+   "ajv": 470.95979069767446,
+   "ata": 96.82004830917874,
+   "engine": "codegen"
+  },
+  {
+   "name": "sarif",
+   "size": 81541,
+   "docs": 2,
+   "ajvSrc": 6651,
+   "ajv": 478.7792619047619,
+   "ata": 106.46110372340426,
+   "engine": "codegen"
+  },
+  {
+   "name": "schema-catalog",
+   "size": 1284,
+   "docs": 2,
+   "ajvSrc": 8126,
+   "ajv": 0.2994554941682014,
+   "ata": 0.12025554813999771,
+   "engine": "codegen"
+  },
+  {
+   "name": "semantic-release",
+   "size": 2367,
+   "docs": 1,
+   "ajvSrc": 17404,
+   "ajv": 0.20359038763004134,
+   "ata": 0.04790132757563565,
+   "engine": "codegen"
+  },
+  {
+   "name": "sergen",
+   "size": 14328,
+   "docs": 4,
+   "ajvSrc": 52247,
+   "ajv": 0.466499218640668,
+   "ata": 0.29684469989313705,
+   "engine": "codegen"
+  },
+  {
+   "name": "serve",
+   "size": 3372,
+   "docs": 1,
+   "ajvSrc": 20985,
+   "ajv": 0.2041487416873791,
+   "ata": 0.07892054864250046,
+   "engine": "codegen"
+  },
+  {
+   "name": "settings.job",
+   "size": 562,
+   "docs": 2,
+   "ajvSrc": 1462,
+   "ajv": 0.02414027570407618,
+   "ata": 0.02251193572895855,
+   "engine": "codegen"
+  },
+  {
+   "name": "sigmacv",
+   "size": 13156,
+   "docs": 1,
+   "ajvSrc": 165514,
+   "ajv": 0.5116430033256587,
+   "ata": 0.1578457898932182,
+   "engine": "codegen"
+  },
+  {
+   "name": "sil-kit-participant-configuration",
+   "size": 24167,
+   "docs": 1,
+   "ajvSrc": 83754,
+   "ajv": 0.251675714276726,
+   "ata": 0.21157592603367203,
+   "engine": "codegen"
+  },
+  {
+   "name": "sil-kit-registry-configuration",
+   "size": 2127,
+   "docs": 2,
+   "ajvSrc": 9395,
+   "ajv": 0.04648168871040088,
+   "ata": 0.04155188103014136,
+   "engine": "codegen"
+  },
+  {
+   "name": "size-limit",
+   "size": 2440,
+   "docs": 2,
+   "ajvSrc": 16417,
+   "ajv": 0.4227713485521032,
+   "ata": 0.10909819553465741,
+   "engine": "codegen"
+  },
+  {
+   "name": "skypilot-task",
+   "size": 1431,
+   "docs": 1,
+   "ajvSrc": 11335,
+   "ajv": 0.10028218833280268,
+   "ata": 0.051275884302902426,
+   "engine": "codegen"
+  },
+  {
+   "name": "solidaritySchema",
+   "size": 2880,
+   "docs": 1,
+   "ajvSrc": 30832,
+   "ajv": 5.037463795491751,
+   "ata": 1.7656330611344073,
+   "engine": "codegen"
+  },
+  {
+   "name": "solution-filter",
+   "size": 575,
+   "docs": 1,
+   "ajvSrc": 1979,
+   "ajv": 0.03293622960241485,
+   "ata": 0.03029886736085915,
+   "engine": "codegen"
+  },
+  {
+   "name": "sourcehut-build-0.65.0",
+   "size": 4543,
+   "docs": 1,
+   "ajvSrc": 11854,
+   "ajv": 0.0912049245740761,
+   "ata": 0.08709716022662445,
+   "engine": "codegen"
+  },
+  {
+   "name": "sourcemap-v3",
+   "size": 1897,
+   "docs": 4,
+   "ajvSrc": 9083,
+   "ajv": 0.07724414495485127,
+   "ata": 0.0353255637942363,
+   "engine": "codegen"
+  },
+  {
+   "name": "specif-1.0",
+   "size": 18986,
+   "docs": 1,
+   "ajvSrc": 214015,
+   "ajv": 25.04211013767209,
+   "ata": 7.396596153846154,
+   "engine": "codegen"
+  },
+  {
+   "name": "specif-1.1",
+   "size": 22580,
+   "docs": 2,
+   "ajvSrc": 17815,
+   "ajv": 17.60752288732394,
+   "ata": 6.25122390625,
+   "engine": "codegen"
+  },
+  {
+   "name": "specmatic",
+   "size": 44773,
+   "docs": 10,
+   "ajvSrc": 2292,
+   "ajv": 1.2675881812420786,
+   "ata": 0.563695927856841,
+   "engine": "codegen"
+  },
+  {
+   "name": "sponge-mixins",
+   "size": 3613,
+   "docs": 2,
+   "ajvSrc": 12620,
+   "ajv": 0.035117568148896015,
+   "ata": 0.03221129997551957,
+   "engine": "codegen"
+  },
+  {
+   "name": "sprite",
+   "size": 1699,
+   "docs": 1,
+   "ajvSrc": 6493,
+   "ajv": 0.0845497813354076,
+   "ata": 0.03384373410947488,
+   "engine": "codegen"
+  },
+  {
+   "name": "stackblitzrc",
+   "size": 948,
+   "docs": 1,
+   "ajvSrc": 5615,
+   "ajv": 0.03759660713312242,
+   "ata": 0.030219995195060887,
+   "engine": "codegen"
+  },
+  {
+   "name": "stale",
+   "size": 2732,
+   "docs": 6,
+   "ajvSrc": 33415,
+   "ajv": 0.06874816617512597,
+   "ata": 0.057837715949774146,
+   "engine": "codegen"
+  },
+  {
+   "name": "starlake",
+   "size": 79395,
+   "docs": 22,
+   "ajvSrc": 1472,
+   "ajv": 0.669005167569737,
+   "ata": 0.5183433580387685,
+   "engine": "codegen"
+  },
+  {
+   "name": "staticwebapp.config",
+   "size": 12180,
+   "docs": 1,
+   "ajvSrc": 83585,
+   "ajv": 1.0341455532574972,
+   "ata": 0.9158624384659416,
+   "engine": "codegen"
+  },
+  {
+   "name": "stylelintrc",
+   "size": 57899,
+   "docs": 4,
+   "ajvSrc": 10701,
+   "ajv": 2.307380595293032,
+   "ata": 1.274875701172871,
+   "engine": "codegen"
+  },
+  {
+   "name": "swa-cli.config",
+   "size": 1581,
+   "docs": 1,
+   "ajvSrc": 13017,
+   "ajv": 0.04103141431610649,
+   "ata": 0.03769213264408064,
+   "engine": "codegen"
+  },
+  {
+   "name": "task",
+   "size": 12725,
+   "docs": 1,
+   "ajvSrc": 15302,
+   "ajv": 0.2090545570473657,
+   "ata": 0.07974136212492125,
+   "engine": "codegen"
+  },
+  {
+   "name": "taurus",
+   "size": 8768,
+   "docs": 3,
+   "ajvSrc": 52099,
+   "ajv": 0.06542739375144142,
+   "ata": 0.03364807295491463,
+   "engine": "codegen"
+  },
+  {
+   "name": "template",
+   "size": 38080,
+   "docs": 4,
+   "ajvSrc": 171643,
+   "ajv": 9.759624146341462,
+   "ata": 2.342700749590068,
+   "engine": "codegen"
+  },
+  {
+   "name": "templatesources",
+   "size": 1027,
+   "docs": 1,
+   "ajvSrc": 3908,
+   "ajv": 0.2564356324565509,
+   "ata": 0.10154750601663332,
+   "engine": "codegen"
+  },
+  {
+   "name": "testenvironments",
+   "size": 2278,
+   "docs": 1,
+   "ajvSrc": 1573,
+   "ajv": 0.10502744606885543,
+   "ata": 0.03519535213572637,
+   "engine": "codegen"
+  },
+  {
+   "name": "tfpowershell-datasource",
+   "size": 7030,
+   "docs": 2,
+   "ajvSrc": 54801,
+   "ajv": 2.463720004927322,
+   "ata": 1.2568719914535287,
+   "engine": "codegen"
+  },
+  {
+   "name": "tfpowershell-provider",
+   "size": 7261,
+   "docs": 2,
+   "ajvSrc": 54015,
+   "ajv": 1.7455562489090592,
+   "ata": 0.9874547519131078,
+   "engine": "codegen"
+  },
+  {
+   "name": "tfpowershell-resource",
+   "size": 7687,
+   "docs": 2,
+   "ajvSrc": 57800,
+   "ajv": 2.603881916417133,
+   "ata": 1.4231565034865519,
+   "engine": "codegen"
+  },
+  {
+   "name": "tfpowershell-settings",
+   "size": 1542,
+   "docs": 3,
+   "ajvSrc": 4505,
+   "ajv": 0.3103533975761526,
+   "ata": 0.09537769495987067,
+   "engine": "codegen"
+  },
+  {
+   "name": "thunderbird-extension",
+   "size": 76411,
+   "docs": 2,
+   "ajvSrc": 320558,
+   "ajv": 1.0745104491243151,
+   "ata": 0.3855204707106922,
+   "engine": "codegen"
+  },
+  {
+   "name": "tldr",
+   "size": 616,
+   "docs": 1,
+   "ajvSrc": 7059,
+   "ajv": 0.05742275905729745,
+   "ata": 0.057086358985190586,
+   "engine": "codegen"
+  },
+  {
+   "name": "tmlanguage",
+   "size": 9257,
+   "docs": 1,
+   "ajvSrc": 429,
+   "ajv": 0.14424693659711654,
+   "ata": 0.06828902819604067,
+   "engine": "codegen"
+  },
+  {
+   "name": "traefik-v2-file-provider",
+   "size": 53575,
+   "docs": 1,
+   "ajvSrc": 47415,
+   "ajv": 7.21931221801119,
+   "ata": 1.4355829385587138,
+   "engine": "codegen"
+  },
+  {
+   "name": "traefik-v2",
+   "size": 21534,
+   "docs": 1,
+   "ajvSrc": 16105,
+   "ajv": 1.9505778514653531,
+   "ata": 1.3286512655284661,
+   "engine": "codegen"
+  },
+  {
+   "name": "traefik-v3-file-provider",
+   "size": 57145,
+   "docs": 1,
+   "ajvSrc": 48363,
+   "ajv": 7.826128129890455,
+   "ata": 1.467908256880734,
+   "engine": "codegen"
+  },
+  {
+   "name": "traefik-v3",
+   "size": 24516,
+   "docs": 1,
+   "ajvSrc": 16028,
+   "ajv": 2.8560854633728403,
+   "ata": 1.9891244157135755,
+   "engine": "codegen"
+  },
+  {
+   "name": "travis",
+   "size": 30668,
+   "docs": 25,
+   "ajvSrc": 48499,
+   "ajv": 3.897493917274939,
+   "ata": 3.667768878718536,
+   "engine": "codegen"
+  },
+  {
+   "name": "treefmt",
+   "size": 2441,
+   "docs": 1,
+   "ajvSrc": 13083,
+   "ajv": 0.07207057466915309,
+   "ata": 0.052249646990899484,
+   "engine": "codegen"
+  },
+  {
+   "name": "truescript",
+   "size": 2307,
+   "docs": 1,
+   "ajvSrc": 9614,
+   "ajv": 0.14476038910984607,
+   "ata": 0.10133646289869025,
+   "engine": "codegen"
+  },
+  {
+   "name": "ts-force-config",
+   "size": 3370,
+   "docs": 2,
+   "ajvSrc": 6852,
+   "ajv": 0.05956751013381702,
+   "ata": 0.025849459815410543,
+   "engine": "codegen"
+  },
+  {
+   "name": "tsconfig",
+   "size": 412907,
+   "docs": 18,
+   "ajvSrc": 281964,
+   "ajv": 5.019276272886882,
+   "ata": 2.439725881205025,
+   "engine": "codegen"
+  },
+  {
+   "name": "tsd",
+   "size": 1587,
+   "docs": 1,
+   "ajvSrc": 3246,
+   "ajv": 0.030981511143193953,
+   "ata": 0.028621227461724554,
+   "engine": "codegen"
+  },
+  {
+   "name": "tsdrc",
+   "size": 827,
+   "docs": 1,
+   "ajvSrc": 1739,
+   "ajv": 0.13924807753227902,
+   "ata": 0.05062386809609808,
+   "engine": "codegen"
+  },
+  {
+   "name": "tslint",
+   "size": 84257,
+   "docs": 26,
+   "ajvSrc": 5218,
+   "ajv": 4.337378114842903,
+   "ata": 1.306010839754473,
+   "engine": "codegen"
+  },
+  {
+   "name": "twee-ts.config",
+   "size": 2466,
+   "docs": 1,
+   "ajvSrc": 10781,
+   "ajv": 0.15352020878509337,
+   "ata": 0.07392741896732079,
+   "engine": "codegen"
+  },
+  {
+   "name": "typings",
+   "size": 2114,
+   "docs": 7,
+   "ajvSrc": 10232,
+   "ajv": 0.06963118636514765,
+   "ata": 0.07919009344314222,
+   "engine": "codegen"
+  },
+  {
+   "name": "typingsrc",
+   "size": 1420,
+   "docs": 1,
+   "ajvSrc": 6414,
+   "ajv": 0.031089678800323952,
+   "ata": 0.027860730795564326,
+   "engine": "codegen"
+  },
+  {
+   "name": "ubuntu-server-autoinstall",
+   "size": 3553,
+   "docs": 1,
+   "ajvSrc": 54690,
+   "ajv": 0.03779632037372651,
+   "ata": 0.03390974581731127,
+   "engine": "codegen"
+  },
+  {
+   "name": "unist",
+   "size": 3047,
+   "docs": 10,
+   "ajvSrc": 2551,
+   "ajv": 0.07962091204044666,
+   "ata": 0.08844421916112057,
+   "engine": "codegen"
+  },
+  {
+   "name": "uplugin",
+   "size": 9596,
+   "docs": 2,
+   "ajvSrc": 21153,
+   "ajv": 10.203148903620603,
+   "ata": 2.67204128256513,
+   "engine": "codegen"
+  },
+  {
+   "name": "uproject",
+   "size": 8161,
+   "docs": 3,
+   "ajvSrc": 9538,
+   "ajv": 1.4462882501807663,
+   "ata": 0.691234663901849,
+   "engine": "codegen"
+  },
+  {
+   "name": "urai-ecma",
+   "size": 6569,
+   "docs": 1,
+   "ajvSrc": 9245,
+   "ajv": 0.23770595925741045,
+   "ata": 0.09126137615871979,
+   "engine": "codegen"
+  },
+  {
+   "name": "utam-page-object",
+   "size": 11267,
+   "docs": 1,
+   "ajvSrc": 3139,
+   "ajv": 0.49796511801613386,
+   "ata": 0.2672354257692976,
+   "engine": "codegen"
+  },
+  {
+   "name": "utcm-monitor",
+   "size": 2076292,
+   "docs": 1,
+   "ajvSrc": 5221857,
+   "ajv": 13.171331577214357,
+   "ata": 4.097772894898586,
+   "engine": "codegen"
+  },
+  {
+   "name": "uxp-manifest-5",
+   "size": 16064,
+   "docs": 2,
+   "ajvSrc": 109500,
+   "ajv": 0.7887999881684808,
+   "ata": 0.253517777693273,
+   "engine": "codegen"
+  },
+  {
+   "name": "vault",
+   "size": 14409,
+   "docs": 1,
+   "ajvSrc": 104512,
+   "ajv": 0.06037607411689591,
+   "ata": 0.04348319993216705,
+   "engine": "codegen"
+  },
+  {
+   "name": "vector",
+   "size": 983970,
+   "docs": 1,
+   "ajvSrc": 121931,
+   "ajv": 34.519018119068164,
+   "ata": 14.357059562253319,
+   "engine": "codegen"
+  },
+  {
+   "name": "vespertide-migration",
+   "size": 8207,
+   "docs": 1,
+   "ajvSrc": 4791,
+   "ajv": 5.166903513304056,
+   "ata": 3.225593339246835,
+   "engine": "codegen"
+  },
+  {
+   "name": "vespertide-model",
+   "size": 5093,
+   "docs": 1,
+   "ajvSrc": 4005,
+   "ajv": 0.5459281853914183,
+   "ata": 0.12696959116302692,
+   "engine": "codegen"
+  },
+  {
+   "name": "vespertide",
+   "size": 1622,
+   "docs": 1,
+   "ajvSrc": 7282,
+   "ajv": 0.03174445609276259,
+   "ata": 0.02961537573084586,
+   "engine": "codegen"
+  },
+  {
+   "name": "vim-addon-info",
+   "size": 3144,
+   "docs": 2,
+   "ajvSrc": 3977,
+   "ajv": 0.23231989568934475,
+   "ata": 0.06462562807575362,
+   "engine": "codegen"
+  },
+  {
+   "name": "vs-nesting",
+   "size": 5054,
+   "docs": 1,
+   "ajvSrc": 3131,
+   "ajv": 1.3019517966410623,
+   "ata": 0.8120635226765196,
+   "engine": "codegen"
+  },
+  {
+   "name": "vsconfig",
+   "size": 711,
+   "docs": 1,
+   "ajvSrc": 3514,
+   "ajv": 4.201532507089592,
+   "ata": 0.08938420731557437,
+   "engine": "codegen"
+  },
+  {
+   "name": "vsext",
+   "size": 1031,
+   "docs": 1,
+   "ajvSrc": 5757,
+   "ajv": 0.08921596327901614,
+   "ata": 0.053157083188813715,
+   "engine": "codegen"
+  },
+  {
+   "name": "vsix-manifestinjection",
+   "size": 3394,
+   "docs": 1,
+   "ajvSrc": 17162,
+   "ajv": 0.22189362008997665,
+   "ata": 0.0363787500534309,
+   "engine": "codegen"
+  },
+  {
+   "name": "vsix-publish",
+   "size": 5578,
+   "docs": 1,
+   "ajvSrc": 24689,
+   "ajv": 0.1309392676635416,
+   "ata": 0.06890096977004564,
+   "engine": "codegen"
+  },
+  {
+   "name": "web-manifest-share-target",
+   "size": 2436,
+   "docs": 5,
+   "ajvSrc": 763,
+   "ajv": 0.07127049327833655,
+   "ata": 0.052504971548957446,
+   "engine": "codegen"
+  },
+  {
+   "name": "web-manifest",
+   "size": 10016,
+   "docs": 7,
+   "ajvSrc": 37079,
+   "ajv": 0.20019055603796748,
+   "ata": 0.1483185401340769,
+   "engine": "codegen"
+  },
+  {
+   "name": "web-types",
+   "size": 29734,
+   "docs": 5,
+   "ajvSrc": 7636,
+   "ajv": 14.80506765249538,
+   "ata": 9.87226683107275,
+   "engine": "codegen"
+  },
+  {
+   "name": "webextension",
+   "size": 66930,
+   "docs": 60,
+   "ajvSrc": 262531,
+   "ajv": 1.3741012345679011,
+   "ata": 1.0659411608093716,
+   "engine": "codegen"
+  },
+  {
+   "name": "webjobs-list",
+   "size": 386,
+   "docs": 2,
+   "ajvSrc": 2138,
+   "ajv": 0.028065023377993815,
+   "ata": 0.024560957204206264,
+   "engine": "codegen"
+  },
+  {
+   "name": "winget-pkgs-installer-1.0.0",
+   "size": 9549,
+   "docs": 1,
+   "ajvSrc": 39310,
+   "ajv": 1.0481542069543799,
+   "ata": 0.8246880051129803,
+   "engine": "codegen"
+  },
+  {
+   "name": "winget-pkgs-locale-1.0.0",
+   "size": 3262,
+   "docs": 1,
+   "ajvSrc": 37326,
+   "ajv": 0.3806413638223567,
+   "ata": 0.12931616244560684,
+   "engine": "codegen"
+  },
+  {
+   "name": "winget-pkgs-singleton-1.0.0",
+   "size": 11553,
+   "docs": 1,
+   "ajvSrc": 56310,
+   "ajv": 1.5857730426164518,
+   "ata": 0.5851980132837873,
+   "engine": "codegen"
+  },
+  {
+   "name": "winutil-applications",
+   "size": 1992,
+   "docs": 1,
+   "ajvSrc": 9279,
+   "ajv": 0.36731964774376025,
+   "ata": 0.1078995810820653,
+   "engine": "codegen"
+  },
+  {
+   "name": "winutil-presets",
+   "size": 649,
+   "docs": 1,
+   "ajvSrc": 3247,
+   "ajv": 0.8051381788172779,
+   "ata": 0.4078999439147504,
+   "engine": "codegen"
+  },
+  {
+   "name": "xs-app",
+   "size": 6503,
+   "docs": 1,
+   "ajvSrc": 55028,
+   "ajv": 1.246429657557723,
+   "ata": 0.4203110571719783,
+   "engine": "codegen"
+  },
+  {
+   "name": "yamllint",
+   "size": 22057,
+   "docs": 6,
+   "ajvSrc": 132610,
+   "ajv": 0.3070858283433134,
+   "ata": 0.22320896946564886,
+   "engine": "codegen"
+  },
+  {
+   "name": "yap",
+   "size": 4675,
+   "docs": 2,
+   "ajvSrc": 19618,
+   "ajv": 0.21758909027611564,
+   "ata": 0.0764532377675841,
+   "engine": "codegen"
+  },
+  {
+   "name": "youtrack-app",
+   "size": 8809,
+   "docs": 4,
+   "ajvSrc": 40434,
+   "ajv": 0.1657045559992709,
+   "ata": 0.12191633648277964,
+   "engine": "codegen"
+  },
+  {
+   "name": "zeropress-build-pages-config-1.0",
+   "size": 16440,
+   "docs": 3,
+   "ajvSrc": 6433,
+   "ajv": 0.9322286699759956,
+   "ata": 0.7377271587178637,
+   "engine": "codegen"
+  },
+  {
+   "name": "zeropress-preview-data-0.7",
+   "size": 51155,
+   "docs": 4,
+   "ajvSrc": 16394,
+   "ajv": 4.998313343328336,
+   "ata": 1.797094968553459,
+   "engine": "codegen"
+  },
+  {
+   "name": "zeropress-theme-runtime-0.7",
+   "size": 14024,
+   "docs": 3,
+   "ajvSrc": 52286,
+   "ajv": 1.6931201117318435,
+   "ata": 0.6997521735327561,
+   "engine": "codegen"
+  }
+ ]
+}
