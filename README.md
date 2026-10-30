@@ -61,11 +61,11 @@ holds the user and order bodies as tagged types, and `npm run typia` (ttsc, the
 TypeScript-Go plugin host typia 15 requires) turns them into plain functions in
 `typia/dist`. The user body closes its object, so it uses `createEquals` and
 `createValidateEquals`; the order body does not, so `createIs` and
-`createValidate`. typia's generated code constructs a `pattern`'s RegExp on every
-call and counts string lengths in code points by iterating the string (the same
-in 6.x, 9.x and 15.x); on the order body those two are about half of its time.
-That is the published output and is measured as it comes; the suggestion to
-change it is with typia's maintainers.
+`createValidate`. Up to typia 15.2.1 the generated code constructed a `pattern`'s
+RegExp on every call and counted string lengths in code points by iterating the
+string, about half of its time on the order body; typia 15.2.2 reuses the RegExp
+and accepts a string by its UTF-16 length where that already decides, after a
+report from this benchmark (samchon/typia#2504). The runs below use 15.2.2.
 
 ## What this does not measure
 
